@@ -188,18 +188,11 @@ export const bookmarks: BookmarkData = {
       "url": "https://ahrefs.com/websites#trending"
     },
     {
-      "name": "视频类 SaaS 工具",
-      "url": "https://docs.google.com/spreadsheets/d/1QOdqq9KbjQj1JZO43vc1pir2rnEEsMUXzTDATrOCn2k/edit?gid=0#gid=0"
-    },
-    {
-      "name": "一人公司创始人",
-      "url": "https://docs.google.com/spreadsheets/d/1eUni44pIURML2VWFFXKzNmm-WKuuam9_ynr5Fo_Q74M/edit?gid=83151001#gid=83151001"
-    },
-    {
       "name": "每月 $500 收益的项目（来源：HN）",
       "url": "https://www.500mrr.com/"
     },
-    {
+    { 
+      "name": "YCombinator",
       "url": "https://news.ycombinator.com/item?id=42373343"
     }
   ]
