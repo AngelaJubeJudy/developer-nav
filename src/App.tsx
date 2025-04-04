@@ -7,6 +7,15 @@ import { BookmarkCard } from './components/BookmarkCard';
 import { ShareButtons } from './components/common/ShareButtons';
 import { BookmarkCategory, BookmarkItem } from './types';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import Header from './components/layout/Header';
+import Hero from './components/layout/Hero';
+import Testimonials from './components/layout/Testimonials';
+import FAQ from './components/layout/FAQ';
+import Features from './components/layout/Features';
+import Pricing from './components/layout/Pricing';
+import HowItWorks from './components/layout/HowItWorks';
+import Footer from './components/layout/Footer';
+import BackToTop from './components/common/BackToTop';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -96,63 +105,32 @@ function App() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {!isSpecialPage && (
-            <header className="text-center mb-12">
-              <div className="flex justify-end mb-4">
-                <div className="flex space-x-2">
-                  <button
-                    onClick={toggleShareButtons}
-                    className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Share"
-                  >
-                    <Share2 className="text-[#6B4F4F] dark:text-gray-200" size={24} />
-                  </button>
-                  <button
-                    onClick={() => setIsDarkMode(!isDarkMode)}
-                    className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Toggle dark mode"
-                  >
-                    {isDarkMode ? (
-                      <Sun className="text-yellow-500" size={24} />
-                    ) : (
-                      <Moon className="text-gray-600" size={24} />
-                    )}
-                  </button>
-                </div>
-              </div>
+            <>
+              <Header 
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                currentLang={currentLang}
+                setCurrentLang={setCurrentLang}
+                languages={languages}
+                showShareButtons={showShareButtons}
+                toggleShareButtons={toggleShareButtons}
+              />
               
-              {showShareButtons && (
-                <div className="mb-6">
-                  <ShareButtons 
-                    url={window.location.href} 
-                    title="Developer Tools - Discover Latest Products Quickly As A Developer" 
-                  />
-                </div>
-              )}
+              <Hero 
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              />
+
+              <Features />
               
-              <h1 className="text-4xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-4">
-                Developer Tools
-              </h1>
-              <p className="text-xl text-[#8B7E7E] dark:text-gray-400 mb-6">
-                Discover Latest Products Quickly As A Developer
-              </p>
-              <div className="flex justify-center mb-8">
-                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-              </div>
-              <div className="flex items-center justify-center gap-4 text-sm text-[#8B7E7E] dark:text-gray-400">
-                <Globe size={16} />
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => setCurrentLang(lang.code)}
-                    className={`hover:text-[#6B4F4F] dark:hover:text-gray-200 transition-colors ${
-                      currentLang === lang.code ? 'text-[#6B4F4F] dark:text-gray-200 font-semibold' : ''
-                    }`}
-                  >
-                    {lang.name}
-                  </button>
-                ))}
-              </div>
-            </header>
+              <HowItWorks />
+              
+              <Testimonials />
+              
+              <Pricing />
+              
+              <FAQ />
+            </>
           )}
 
           {isSpecialPage ? (
@@ -179,14 +157,11 @@ function App() {
             </section>
           )}
 
-          {!isSpecialPage && (
-            <footer className="text-center mt-16 pb-8 text-[#8B7E7E] dark:text-gray-400">
-              <p className="mb-2">Never lose a tool you love all over the world.</p>
-              <p>Be Your Own Solopreneur.</p>
-            </footer>
-          )}
+          <Footer />
         </div>
       </main>
+      
+      <BackToTop />
     </div>
   );
 }
