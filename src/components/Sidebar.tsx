@@ -84,10 +84,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   const handleCategoriesClick = () => {
-    navigate('/');
     // 获取第一个非ALL分类作为默认分类
     const firstCategory = Object.keys(bookmarks).find(key => key !== "ALL");
     if (firstCategory) {
+      navigate(`/categories?category=${firstCategory}`);
       onSelectCategory(firstCategory);
     }
   };

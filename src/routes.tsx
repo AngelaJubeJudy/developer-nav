@@ -7,12 +7,22 @@ import { SubmitToolPage } from './components/pages/SubmitToolPage';
 import { SponsorUsPage } from './components/pages/SponsorUsPage';
 import { ContactUsPage } from './components/pages/ContactUsPage';
 import { SubmitToolFormPage } from './components/pages/SubmitToolFormPage';
+import { HomePage } from './components/pages/HomePage';
+import { CategoriesPage } from './components/pages/CategoriesPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        path: '',
+        element: <HomePage />,
+      },
+      {
+        path: 'categories',
+        element: <CategoriesPage />,
+      },
       {
         path: 'resources/resource/:id',
         element: <ResourceDetailView />,

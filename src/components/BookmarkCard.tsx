@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 interface BookmarkCardProps {
   item: BookmarkItem;
+  onCategorySelect?: (category: string) => void;
 }
 
 const getHostname = (url: string): string => {
@@ -16,7 +17,7 @@ const getHostname = (url: string): string => {
   }
 };
 
-export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item }) => {
+export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item, onCategorySelect }) => {
   if (item.items) {
     return (
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
@@ -64,7 +65,12 @@ export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item }) => {
             {item.tags.slice(0, 5).map((tag, index) => (
               <span 
                 key={index} 
-                className="text-xs bg-[#F7F3F0] dark:bg-gray-700 text-[#6B4F4F] dark:text-gray-300 px-2 py-1 rounded-full"
+                className="text-xs bg-[#F7F3F0] dark:bg-gray-700 text-[#6B4F4F] dark:text-gray-300 px-2 py-1 rounded-full cursor-pointer hover:bg-[#E8E0DD] dark:hover:bg-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onCategorySelect?.(tag);
+                }}
               >
                 {tag}
               </span>

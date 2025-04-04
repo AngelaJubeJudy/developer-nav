@@ -4,6 +4,7 @@ import { ShareButtons } from '../common/ShareButtons';
 import { useTranslation } from 'react-i18next';
 import { Sidebar } from '../Sidebar';
 import { BookmarkCategory } from '../../types';
+import BackToTop from '../common/BackToTop';
 
 interface FixedLayoutProps {
   children: React.ReactNode;
@@ -115,6 +116,9 @@ export const FixedLayout: React.FC<FixedLayoutProps> = ({
         <div className="pt-16">
           {children}
         </div>
+
+        {/* 返回顶部按钮 */}
+        <BackToTop />
       </div>
     </div>
   );
