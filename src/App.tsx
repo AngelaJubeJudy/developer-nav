@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Moon, Sun } from 'lucide-react';
+import { Globe, Moon, Sun, Share2 } from 'lucide-react';
 import { bookmarks } from './data/bookmarks';
 import { Sidebar } from './components/Sidebar';
 import { SearchBar } from './components/SearchBar';
 import { BookmarkCard } from './components/BookmarkCard';
+import { ShareButtons } from './components/common/ShareButtons';
 import { BookmarkCategory, BookmarkItem } from './types';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ function App() {
     }
     return false;
   });
+  const [showShareButtons, setShowShareButtons] = useState(false);
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -73,6 +75,10 @@ function App() {
     }
   };
 
+  const toggleShareButtons = () => {
+    setShowShareButtons(!showShareButtons);
+  };
+
   return (
     <div className="flex min-h-screen bg-[#F7F3F0] dark:bg-gray-900 transition-colors duration-200">
       <Sidebar
@@ -92,18 +98,37 @@ function App() {
           {!isSpecialPage && (
             <header className="text-center mb-12">
               <div className="flex justify-end mb-4">
-                <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                  aria-label="Toggle dark mode"
-                >
-                  {isDarkMode ? (
-                    <Sun className="text-yellow-500" size={24} />
-                  ) : (
-                    <Moon className="text-gray-600" size={24} />
-                  )}
-                </button>
+                <div className="flex space-x-2">
+                  <button
+                    onClick={toggleShareButtons}
+                    className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Share"
+                  >
+                    <Share2 className="text-[#6B4F4F] dark:text-gray-200" size={24} />
+                  </button>
+                  <button
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Toggle dark mode"
+                  >
+                    {isDarkMode ? (
+                      <Sun className="text-yellow-500" size={24} />
+                    ) : (
+                      <Moon className="text-gray-600" size={24} />
+                    )}
+                  </button>
+                </div>
               </div>
+              
+              {showShareButtons && (
+                <div className="mb-6">
+                  <ShareButtons 
+                    url={window.location.href} 
+                    title="Developer Tools - Discover Latest Products Quickly As A Developer" 
+                  />
+                </div>
+              )}
+              
               <h1 className="text-4xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-4">
                 Developer Tools
               </h1>

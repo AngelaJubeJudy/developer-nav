@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { bookmarks } from '../../data/bookmarks';
 import { BookmarkItem } from '../../types';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Share2 } from 'lucide-react';
+import { ShareButtons } from '../common/ShareButtons';
 
 export const ResourceDetailView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [resource, setResource] = useState<BookmarkItem | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showShareButtons, setShowShareButtons] = useState(false);
 
   useEffect(() => {
     // 解码 URL 参数
@@ -64,15 +66,38 @@ export const ResourceDetailView: React.FC = () => {
     );
   }
 
+  const toggleShareButtons = () => {
+    setShowShareButtons(!showShareButtons);
+  };
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
-      <button
-        onClick={() => navigate('/')}
-        className="flex items-center text-[#6B4F4F] dark:text-gray-300 mb-6 hover:text-[#B4A7A7] dark:hover:text-gray-100 transition-colors"
-      >
-        <ArrowLeft size={20} className="mr-2" />
-        返回
-      </button>
+      <div className="flex justify-between items-center mb-6">
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center text-[#6B4F4F] dark:text-gray-300 hover:text-[#B4A7A7] dark:hover:text-gray-100 transition-colors"
+        >
+          <ArrowLeft size={20} className="mr-2" />
+          返回
+        </button>
+        
+        <button
+          onClick={toggleShareButtons}
+          className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          aria-label="Share"
+        >
+          <Share2 className="text-[#6B4F4F] dark:text-gray-200" size={24} />
+        </button>
+      </div>
+      
+      {showShareButtons && (
+        <div className="mb-6">
+          <ShareButtons 
+            url={window.location.href} 
+            title={`${resource.name} - Developer Tools`} 
+          />
+        </div>
+      )}
       
       <div className="flex items-start mb-6">
         {resource.icon && (
