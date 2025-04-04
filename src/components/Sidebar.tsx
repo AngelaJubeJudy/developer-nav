@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookmarkData, BookmarkItem } from '../types';
+import { BookmarkData } from '../types';
 import { 
   Menu, 
   ChevronDown, 
@@ -83,13 +83,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const handleCategoriesClick = () => {
     navigate('/');
-    onSelectCategory("ALL");
+    // 获取第一个非ALL分类作为默认分类
+    const firstCategory = Object.keys(bookmarks).find(key => key !== "ALL");
+    if (firstCategory) {
+      onSelectCategory(firstCategory);
+    }
   };
 
-  const isHomeActive = location.pathname === '/';
+  const isHomeActive = location.pathname === '/' && selectedCategory === "ALL";
   const isSearchActive = location.pathname === '/search';
   const isSubmitActive = location.pathname === '/submit';
   const isContactActive = location.pathname === '/contact';
+  const isCategoriesActive = location.pathname === '/' && selectedCategory !== "ALL" && 
+    selectedCategory !== "NEW" && 
+    selectedCategory !== "MOST_SEARCHED" && 
+    selectedCategory !== "HOTTEST";
 
   return (
     <>
@@ -140,7 +148,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 icon={<FolderTree size={20} />}
                 label="Categories"
                 onClick={handleCategoriesClick}
-                isActive={!isHomeActive && !isSearchActive && !isSubmitActive && !isContactActive}
+                isActive={isCategoriesActive}
                 isCollapsed={isSidebarCollapsed}
               />
               <NavItem
