@@ -4,7 +4,13 @@
     "toggleMenu": "切换菜单",
     "allRightsReserved": "保留所有权利",
     "thankYou": "我们会尽快回复您。",
-    "verifying": "正在验证人类身份..."
+    "verifying": "正在验证人类身份...",
+    "lightMode": "浅色模式",
+    "darkMode": "深色模式",
+    "shareTitle": "分享开发者导航",
+    "tool": "工具",
+    "tools": "工具",
+    "byFar": "目前"
   },
   "hero": {
     "title": "开发者工具",
@@ -32,11 +38,11 @@
     "sponsor": "赞助我们",
     "resourceDetails": "资源详情",
     "category": "分类",
-    "requestsandkeywords": "需求与关键词",
-    "websitetemplates": "网站模板",
-    "relatedwebsites": "相关网站",
-    "buildyourwebsites": "构建网站",
-    "newsandcommunity": "新闻与社区",
+    "keywords": "关键词",
+    "templates": "模板",
+    "news": "新闻",
+    "tools": "工具",
+    "buildYourTools": "构建工具",
     "newTools": "最新工具",
     "mostSearched": "最多搜索",
     "hottest": "最热门",
@@ -45,7 +51,8 @@
     "competitorResearch": "竞品研究",
     "newsAndCommunity": "新闻和社区",
     "customCampaign": "定制营销",
-    "sponsor": "赞助我们"
+    "sponsor": "赞助我们",
+    "all": "全部"
   },
   "sections": {
     "featuredTools": "精选工具",
@@ -61,6 +68,16 @@
     "noResults": "未找到与\"{{query}}\"相关的结果",
     "popularCategories": "热门分类",
     "featuredTools": "精选工具"
+  },
+  "categories": {
+    "title": "按分类浏览工具",
+    "description": "浏览我们收集的 {{count}} 个工具",
+    "all": "所有工具",
+    "keywords": "关键词",
+    "templates": "模板",
+    "news": "新闻",
+    "tools": "工具",
+    "buildYourTools": "构建工具"
   },
   "faq": {
     "title": "常见问题",
@@ -140,5 +157,8 @@
       "success": "消息发送成功！",
       "error": "消息发送失败。请稍后重试。"
     }
+  },
+  "features": {
+    "buildYourTools": "构建工具"
   }
 } 

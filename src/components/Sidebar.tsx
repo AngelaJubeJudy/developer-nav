@@ -88,6 +88,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
     if (firstCategory) {
       navigate(`/categories?category=${firstCategory}`);
       onSelectCategory(firstCategory);
+    } else {
+      // 如果没有找到非ALL分类，则导航到首页
+      navigate('/');
+      onSelectCategory("ALL");
     }
   };
 
