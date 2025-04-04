@@ -1,97 +1,115 @@
 import React, { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
 import { SearchBar } from '../SearchBar';
 import { bookmarks } from '../../data/bookmarks';
 import { BookmarkItem } from '../../types';
 import { BookmarkCard } from '../BookmarkCard';
-
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
-  { code: 'zh', name: '简体中文' },
-  { code: 'zh-TW', name: '繁體中文' },
-  { code: 'fr', name: 'Français' },
-];
+import { useTranslation } from 'react-i18next';
 
 export const SearchPage: React.FC = () => {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentLang, setCurrentLang] = useState('en');
-  const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [searchResults, setSearchResults] = useState<BookmarkItem[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
+  const [featuredTools, setFeaturedTools] = useState<BookmarkItem[]>([]);
 
   useEffect(() => {
     // 提取所有分类
-    const allCategories = ['ALL', ...Object.keys(bookmarks)];
+    const allCategories = Object.keys(bookmarks);
     setCategories(allCategories);
+    
+    // 设置精选工具（从每个分类中选择第一个工具作为精选）
+    const featured = Object.values(bookmarks)
+      .map(items => items[0])
+      .filter(Boolean)
+      .slice(0, 6);
+    setFeaturedTools(featured);
   }, []);
 
   useEffect(() => {
     // 搜索逻辑
-    const results = Object.entries(bookmarks).flatMap(([category, items]) => 
-      items.filter(item => 
+    if (!searchQuery.trim()) {
+      setSearchResults([]);
+      return;
+    }
+    
+    const results = Object.values(bookmarks)
+      .flat()
+      .filter(item => 
         item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()))
-      )
-    );
+      );
     setSearchResults(results);
   }, [searchQuery]);
 
-  const filteredResults = selectedCategory === 'ALL' 
-    ? searchResults 
-    : searchResults.filter(item => bookmarks[selectedCategory]?.includes(item));
-
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-8 text-center">
-        Search Tools
-      </h1>
+      <div className="max-w-4xl mx-auto text-center mb-12">
+        <h1 className="text-4xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-4">
+          {t('search.title', 'Discover Latest Products Quickly As A Developer.')}
+        </h1>
+        <p className="text-lg text-[#8B7E7E] dark:text-gray-400 mb-8">
+          {t('search.subtitle', 'Never lose a tool you love all over the world.')}
+        </p>
+      </div>
       
-      <div className="w-full max-w-2xl mx-auto mb-8">
+      <div className="w-full max-w-2xl mx-auto mb-12">
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
-        {categories.map(category => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full transition-colors ${
-              selectedCategory === category
-                ? 'bg-[#6B4F4F] text-white'
-                : 'bg-[#D5C6C6] text-[#6B4F4F] hover:bg-[#B4A7A7]'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredResults.map((item, index) => (
-          <BookmarkCard key={`${item.name}-${index}`} item={item} />
-        ))}
-      </div>
+      {!searchQuery && (
+        <>
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
+              {t('search.popularCategories', 'Popular Categories')}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setSearchQuery(category)}
+                  className="px-6 py-2 rounded-full bg-[#F7F3F0] dark:bg-gray-700 text-[#6B4F4F] dark:text-gray-200 hover:bg-[#E8E0DD] dark:hover:bg-gray-600 transition-colors"
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
 
-      {filteredResults.length === 0 && (
-        <div className="text-center text-[#8B7E7E] dark:text-gray-400 mt-8">
-          No results found for "{searchQuery}"
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
+              {t('search.featuredTools', 'Featured Tools')}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredTools.map((item, index) => (
+                <BookmarkCard key={`${item.name}-${index}`} item={item} />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
+      {searchQuery && (
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
+            {t('search.searchResults', 'Search Results')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {searchResults.map((item, index) => (
+              <BookmarkCard key={`${item.name}-${index}`} item={item} />
+            ))}
+          </div>
+          {searchResults.length === 0 && (
+            <div className="text-center text-[#8B7E7E] dark:text-gray-400 mt-8">
+              {t('search.noResults', 'No results found for "{{query}}"', { query: searchQuery })}
+            </div>
+          )}
         </div>
       )}
-      
-      <div className="flex items-center justify-center gap-4 text-sm text-[#8B7E7E] dark:text-gray-400 mt-8">
-        <Globe size={16} />
-        {languages.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => setCurrentLang(lang.code)}
-            className={`hover:text-[#6B4F4F] dark:hover:text-gray-200 transition-colors ${
-              currentLang === lang.code ? 'text-[#6B4F4F] dark:text-gray-200 font-semibold' : ''
-            }`}
-          >
-            {lang.name}
-          </button>
-        ))}
+
+      <div className="text-center text-[#8B7E7E] dark:text-gray-400 mt-12">
+        <p className="text-lg font-medium mb-2">
+          {t('search.beYourOwnSolopreneur', 'Be Your Own Solopreneur.')}
+        </p>
       </div>
     </div>
   );
