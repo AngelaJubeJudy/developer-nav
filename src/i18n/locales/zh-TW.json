@@ -1,0 +1,109 @@
+{
+  "navigation": {
+    "newTools": "最新工具",
+    "mostSearched": "最多搜尋",
+    "hottest": "最熱門",
+    "demandKeywords": "需求和關鍵詞",
+    "websiteEssentials": "網站必備",
+    "competitorResearch": "競品研究",
+    "websiteTemplates": "網站模板",
+    "newsAndCommunity": "新聞和社區"
+  },
+  "sections": {
+    "featuredTools": "精選工具",
+    "allTools": "全部工具",
+    "latestTools": "最新工具",
+    "mostSearched": "最多搜尋",
+    "hottest": "最熱門"
+  },
+  "features": {
+    "title": "為什麼選擇我們的平台",
+    "smartSearch": {
+      "title": "智能搜尋",
+      "description": "通過我們的智能搜尋系統快速找到您需要的工具"
+    },
+    "globalCommunity": {
+      "title": "全球社區",
+      "description": "與全球開發者連接，發現熱門工具"
+    },
+    "saveFavorites": {
+      "title": "收藏夾",
+      "description": "收藏您喜歡的工具，隨時訪問"
+    },
+    "easySharing": {
+      "title": "輕鬆分享",
+      "description": "與您的團隊和網絡分享有用的工具"
+    }
+  },
+  "faq": {
+    "title": "常見問題",
+    "submitTool": {
+      "question": "如何提交新工具？",
+      "answer": "您可以點擊導航菜單中的\"提交\"按鈕提交新工具。填寫工具的必要信息，包括名稱、描述和URL。我們的團隊將審核您的提交，如果符合標準，將添加到平台中。"
+    },
+    "toolCategories": {
+      "question": "工具是如何分類的？",
+      "answer": "工具根據其主要功能和目標用戶進行分類。我們使用自動分類和人工審核相結合的方式確保分類準確。如果您發現工具分類有誤，請告訴我們。"
+    },
+    "suggestions": {
+      "question": "我可以為平台提出改進建議嗎？",
+      "answer": "當然可以！我們歡迎用戶的反饋和建議。您可以通過聯繫表單或直接聯繫我們提交您的想法。我們會定期審查用戶反饋以改進平台。"
+    },
+    "updates": {
+      "question": "工具數據庫多久更新一次？",
+      "answer": "我們的工具數據庫每天更新。新工具在提交並獲得批准後會被添加，現有條目也會定期審查以確保準確性和相關性。"
+    }
+  },
+  "pricing": {
+    "title": "選擇您的計劃",
+    "free": {
+      "name": "免費版",
+      "description": "適合個人開發者",
+      "features": [
+        "訪問所有工具",
+        "基礎搜尋功能",
+        "最多保存10個收藏",
+        "社區支持"
+      ]
+    },
+    "pro": {
+      "name": "專業版",
+      "description": "適合專業開發者",
+      "features": [
+        "包含免費版全部功能",
+        "高級搜尋過濾器",
+        "無限收藏",
+        "優先支持",
+        "自定義分類",
+        "API訪問"
+      ]
+    },
+    "enterprise": {
+      "name": "企業版",
+      "description": "適合團隊和組織",
+      "features": [
+        "包含專業版全部功能",
+        "團隊協作",
+        "自定義品牌",
+        "專屬支持",
+        "分析儀表板",
+        "SSO集成"
+      ]
+    },
+    "selectPlan": "立即開始"
+  },
+  "contact": {
+    "title": "聯繫我們",
+    "form": {
+      "email": "郵箱",
+      "firstName": "名",
+      "lastName": "姓",
+      "reason": "聯繫原因",
+      "message": "消息",
+      "submit": "發送消息",
+      "sending": "發送中...",
+      "success": "消息發送成功！",
+      "error": "消息發送失敗。請稍後重試。"
+    }
+  }
+} 

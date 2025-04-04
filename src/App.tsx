@@ -6,7 +6,8 @@ import { SearchBar } from './components/SearchBar';
 import { BookmarkCard } from './components/BookmarkCard';
 import { ShareButtons } from './components/common/ShareButtons';
 import { BookmarkCategory, BookmarkItem } from './types';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './components/layout/Header';
 import Hero from './components/layout/Hero';
 import Testimonials from './components/layout/Testimonials';
@@ -16,6 +17,8 @@ import Pricing from './components/layout/Pricing';
 import HowItWorks from './components/layout/HowItWorks';
 import Footer from './components/layout/Footer';
 import BackToTop from './components/common/BackToTop';
+import { ToolCard } from './components/common/ToolCard';
+import { FixedLayout } from './components/layout/FixedLayout';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -112,10 +115,10 @@ const hottestTools = [
 ];
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('darkMode') === 'true' ||
@@ -124,15 +127,18 @@ function App() {
     return false;
   });
   const [showShareButtons, setShowShareButtons] = useState(false);
+  const [currentLang, setCurrentLang] = useState(i18n.language);
   
   const navigate = useNavigate();
   const location = useLocation();
   const isDetailPage = location.pathname.includes('/resources/');
   const isSearchPage = location.pathname === '/search';
   const isSubmitPage = location.pathname === '/submit';
+  const isSubmitToolPage = location.pathname === '/submit-tool';
+  const isCustomCampaignPage = location.pathname === '/custom-campaign';
   const isSponsorPage = location.pathname === '/sponsor-us';
   const isContactPage = location.pathname === '/contact';
-  const isSpecialPage = isDetailPage || isSearchPage || isSubmitPage || isSponsorPage || isContactPage;
+  const isSpecialPage = isDetailPage || isSearchPage || isSubmitPage || isSubmitToolPage || isCustomCampaignPage || isSponsorPage || isContactPage;
 
   // 使用 requestAnimationFrame 确保在下一帧渲染时滚动到顶部
   const scrollToTop = () => {
@@ -217,160 +223,56 @@ function App() {
     selectedCategory !== "MOST_SEARCHED" && 
     selectedCategory !== "HOTTEST";
 
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLang(lang);
+    i18n.changeLanguage(lang);
+  };
+
+  const navigation = [
+    { name: t('navigation.newTools'), href: '/?category=NEW' },
+    { name: t('navigation.mostSearched'), href: '/?category=MOST_SEARCHED' },
+    { name: t('navigation.hottest'), href: '/?category=HOTTEST' },
+  ];
+
   return (
-    <div className="flex min-h-screen bg-[#F7F3F0] dark:bg-gray-900 transition-colors duration-200">
-      <Sidebar
-        bookmarks={bookmarks}
-        selectedCategory={selectedCategory}
-        onSelectCategory={handleCategorySelect}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-      />
-
-      <main 
-        className={`flex-1 min-h-screen transition-all duration-300
-          ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'}
-          ${!isSidebarOpen && 'ml-0'}`}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {!isSpecialPage && (
-            <>
-              <Header 
-                isDarkMode={isDarkMode}
-                setIsDarkMode={setIsDarkMode}
-                currentLang={currentLang}
-                setCurrentLang={setCurrentLang}
-                languages={languages}
-                showShareButtons={showShareButtons}
-                toggleShareButtons={toggleShareButtons}
-              />
-              
-              {/* 顶部导航栏 */}
-              <nav className="hidden md:flex items-center justify-center space-x-8 mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
-                {/* 新增的三个选项 */}
-                <button
-                  className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors py-2"
-                  onClick={() => handleCategorySelect("NEW")}
-                >
-                  <span>New/Latest Tools</span>
-                </button>
-                <button
-                  className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors py-2"
-                  onClick={() => handleCategorySelect("MOST_SEARCHED")}
-                >
-                  <span>Most Searched</span>
-                </button>
-                <button
-                  className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors py-2"
-                  onClick={() => handleCategorySelect("HOTTEST")}
-                >
-                  <span>Hottest</span>
-                </button>
-                
-                {/* 分隔线 */}
-                <div className="h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2"></div>
-                
-                {/* 原有的分类导航 */}
-                {Object.keys(bookmarks).filter(key => key !== 'ALL').map(category => {
-                  const subCategories = bookmarks[category] || [];
-                  const hasSubCategories = subCategories.length > 0;
-                  
-                  return (
-                    <div key={category} className="relative group">
-                      <button
-                        className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors py-2"
-                        onClick={() => handleCategorySelect(category)}
-                      >
-                        <span>{category}</span>
-                        {hasSubCategories && <ChevronDown size={16} />}
-                      </button>
-                      
-                      {hasSubCategories && (
-                        <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-2 hidden group-hover:block z-50">
-                          {subCategories.map((subCat, index) => (
-                            <button
-                              key={index}
-                              onClick={() => handleCategorySelect(subCat.name || '')}
-                              className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            >
-                              {subCat.name}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </nav>
-              
-              <Hero 
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-              />
-
-              {/* 根据页面类型显示不同内容 */}
-              {!isCategoriesPage ? (
-                <>
-                  {/* 精选工具区域 */}
-                  <section className="mb-12">
-                    <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6">
-                      精选工具
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {featuredTools.map((tool, index) => (
-                        <BookmarkCard key={index} item={tool as unknown as BookmarkItem} />
-                      ))}
-                    </div>
-                  </section>
-
-                  {/* 分类工具区域 */}
-                  <section>
-                    <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6">
-                      {selectedCategory === "ALL" ? "全部工具" : 
-                       selectedCategory === "NEW" ? "最新工具" :
-                       selectedCategory === "MOST_SEARCHED" ? "最多搜索" :
-                       selectedCategory === "HOTTEST" ? "最热门" :
-                       selectedCategory}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {getCurrentCategoryTools().map((item, index) => (
-                        <BookmarkCard key={index} item={item as unknown as BookmarkItem} />
-                      ))}
-                    </div>
-                  </section>
-
-                  <Features />
-                  <HowItWorks />
-                  <Testimonials />
-                  <Pricing />
-                  <FAQ />
-                </>
-              ) : (
-                /* Categories页面布局 */
-                <section>
-                  <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6">
-                    {selectedCategory}
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {getCurrentCategoryTools().map((item, index) => (
-                      <BookmarkCard key={index} item={item as unknown as BookmarkItem} />
-                    ))}
-                  </div>
-                </section>
-              )}
-            </>
-          )}
-
-          {isSpecialPage ? (
-            <Outlet />
-          ) : null}
-
-          <Footer />
-        </div>
-      </main>
-      
-      <BackToTop />
-    </div>
+    <FixedLayout
+      isDarkMode={isDarkMode}
+      setIsDarkMode={setIsDarkMode}
+      currentLang={currentLang}
+      setCurrentLang={handleLanguageChange}
+      languages={languages}
+      showShareButtons={showShareButtons}
+      toggleShareButtons={toggleShareButtons}
+      isSidebarOpen={isSidebarOpen}
+      toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      selectedCategory={selectedCategory}
+      onSelectCategory={handleCategorySelect}
+      bookmarks={bookmarks}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {isSpecialPage ? (
+          <Outlet />
+        ) : (
+          <>
+            <SearchBar
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder={t('common.searchPlaceholder')}
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {Object.entries(filteredBookmarks).map(([category, items]) => (
+                <BookmarkCard
+                  key={category}
+                  category={category}
+                  items={items}
+                  searchQuery={searchQuery}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </FixedLayout>
   );
 }
 

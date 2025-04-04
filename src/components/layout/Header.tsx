@@ -1,6 +1,7 @@
 import React from 'react';
 import { Globe, Moon, Sun, Share2 } from 'lucide-react';
 import { ShareButtons } from '../common/ShareButtons';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -21,6 +22,8 @@ const Header: React.FC<HeaderProps> = ({
   showShareButtons,
   toggleShareButtons,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <header className="text-center mb-12">
       <div className="flex justify-end mb-4">
@@ -28,14 +31,14 @@ const Header: React.FC<HeaderProps> = ({
           <button
             onClick={toggleShareButtons}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Share"
+            aria-label={t('features.easySharing.title')}
           >
             <Share2 className="text-[#6B4F4F] dark:text-gray-200" size={24} />
           </button>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle dark mode"
+            aria-label={isDarkMode ? t('common.lightMode') : t('common.darkMode')}
           >
             {isDarkMode ? (
               <Sun className="text-yellow-500" size={24} />
@@ -50,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({
         <div className="mb-6">
           <ShareButtons 
             url={window.location.href} 
-            title="Developer Tools - Discover Latest Products Quickly As A Developer" 
+            title={t('common.shareTitle')} 
           />
         </div>
       )}

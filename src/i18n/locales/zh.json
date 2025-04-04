@@ -1,0 +1,145 @@
+{
+  "common": {
+    "siteName": "开发者导航",
+    "toggleMenu": "切换菜单",
+    "allRightsReserved": "保留所有权利",
+    "thankYou": "我们会尽快回复您。",
+    "verifying": "正在验证人类身份..."
+  },
+  "hero": {
+    "title": "开发者工具",
+    "subtitle": "快速发现最新的开发者产品",
+    "description": "找到最适合您开发工作流程的工具"
+  },
+  "footer": {
+    "title": "开发者工具",
+    "description": "快速发现最新的开发者产品 - 永远不会丢失您喜爱的工具",
+    "quickLinks": "快速链接",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contactUs": "联系我们",
+    "copyright": "开发者工具。保留所有权利。",
+    "createdBy": "由 Angela 在纽约创建"
+  },
+  "navigation": {
+    "home": "首页",
+    "search": "搜索",
+    "categories": "分类",
+    "submitTool": "提交工具",
+    "contact": "联系我们",
+    "sponsor": "赞助我们",
+    "resourceDetails": "资源详情",
+    "category": "分类",
+    "requestsandkeywords": "需求与关键词",
+    "websitetemplates": "网站模板",
+    "relatedwebsites": "相关网站",
+    "buildyourwebsites": "构建网站",
+    "newsandcommunity": "新闻与社区",
+    "newTools": "最新工具",
+    "mostSearched": "最多搜索",
+    "hottest": "最热门",
+    "demandKeywords": "需求和关键词",
+    "websiteEssentials": "网站必备",
+    "competitorResearch": "竞品研究",
+    "newsAndCommunity": "新闻和社区"
+  },
+  "sections": {
+    "featuredTools": "精选工具",
+    "allTools": "全部工具",
+    "latestTools": "最新工具",
+    "mostSearched": "最多搜索",
+    "hottest": "最热门"
+  },
+  "features": {
+    "title": "为什么选择我们的平台",
+    "smartSearch": {
+      "title": "智能搜索",
+      "description": "通过我们的智能搜索系统快速找到您需要的工具"
+    },
+    "globalCommunity": {
+      "title": "全球社区",
+      "description": "与全球开发者连接，发现热门工具"
+    },
+    "saveFavorites": {
+      "title": "收藏夹",
+      "description": "收藏您喜欢的工具，随时访问"
+    },
+    "easySharing": {
+      "title": "轻松分享",
+      "description": "与您的团队和网络分享有用的工具"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "submitTool": {
+      "question": "如何提交新工具？",
+      "answer": "您可以点击导航菜单中的\"提交\"按钮提交新工具。填写工具的必要信息，包括名称、描述和URL。我们的团队将审核您的提交，如果符合标准，将添加到平台中。"
+    },
+    "toolCategories": {
+      "question": "工具是如何分类的？",
+      "answer": "工具根据其主要功能和目标用户进行分类。我们使用自动分类和人工审核相结合的方式确保分类准确。如果您发现工具分类有误，请告诉我们。"
+    },
+    "suggestions": {
+      "question": "我可以为平台提出改进建议吗？",
+      "answer": "当然可以！我们欢迎用户的反馈和建议。您可以通过联系表单或直接联系我们提交您的想法。我们会定期审查用户反馈以改进平台。"
+    },
+    "updates": {
+      "question": "工具数据库多久更新一次？",
+      "answer": "我们的工具数据库每天更新。新工具在提交并获得批准后会被添加，现有条目也会定期审查以确保准确性和相关性。"
+    }
+  },
+  "pricing": {
+    "title": "选择您的计划",
+    "free": {
+      "name": "免费版",
+      "description": "适合个人开发者",
+      "features": [
+        "访问所有工具",
+        "基础搜索功能",
+        "最多保存10个收藏",
+        "社区支持"
+      ]
+    },
+    "pro": {
+      "name": "专业版",
+      "description": "适合专业开发者",
+      "features": [
+        "包含免费版全部功能",
+        "高级搜索过滤器",
+        "无限收藏",
+        "优先支持",
+        "自定义分类",
+        "API访问"
+      ]
+    },
+    "enterprise": {
+      "name": "企业版",
+      "description": "适合团队和组织",
+      "features": [
+        "包含专业版全部功能",
+        "团队协作",
+        "自定义品牌",
+        "专属支持",
+        "分析仪表板",
+        "SSO集成"
+      ]
+    },
+    "selectPlan": "立即开始"
+  },
+  "contact": {
+    "title": "联系我们",
+    "form": {
+      "email": "邮箱",
+      "firstName": "名",
+      "lastName": "姓",
+      "reason": "联系原因",
+      "message": "消息",
+      "submit": "发送消息",
+      "sending": "发送中...",
+      "success": "消息发送成功！",
+      "error": "消息发送失败。请稍后重试。"
+    }
+  }
+} 

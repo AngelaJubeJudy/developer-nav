@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface ContactFormData {
   email: string;
@@ -27,20 +28,41 @@ const reasonOptions = [
 ];
 
 export const ContactUsPage: React.FC = () => {
+  const location = useLocation();
+  const params = useParams();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isHuman, setIsHuman] = useState(false);
-  
-  const location = useLocation();
-  const subject = location.state?.subject || 'Contact Form Submission';
+
+  useEffect(() => {
+    // 从URL参数中获取赞助类型
+    if (params.sponsorType) {
+      const decodedSponsorType = decodeURIComponent(params.sponsorType.replace(/\+/g, ' '));
+      setFormData(prev => ({
+        ...prev,
+        reason: 'Sponsorship',
+        message: `I am interested in the ${decodedSponsorType} sponsorship package.`
+      }));
+    }
+    // 从location state中获取预填充数据
+    else if (location.state) {
+      const { subject, reason } = location.state as { subject?: string; reason?: string };
+      if (subject) {
+        setFormData(prev => ({
+          ...prev,
+          reason: reason || 'Custom Campaign',
+          message: `Regarding: ${subject}\n\n`
+        }));
+      }
+    }
+  }, [location.state, params.sponsorType]);
 
   // 模拟Cloudflare检测
   useEffect(() => {
-    // 在实际应用中，这里应该集成Cloudflare Turnstile或其他验证服务
     const checkIfHuman = async () => {
-      // 模拟API调用延迟
       await new Promise(resolve => setTimeout(resolve, 1000));
       setIsHuman(true);
     };
@@ -55,58 +77,43 @@ export const ContactUsPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!isHuman) {
-      setSubmitError('Please complete the human verification');
+      setSubmitError(t('contact.form.error'));
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitError(null);
-    
+
     try {
-      // 在实际应用中，这里应该发送邮件或调用API
-      await new Promise(resolve => setTimeout(resolve, 1500)); // 模拟API调用
-      
-      // 发送邮件到指定邮箱
-      const mailtoLink = `mailto:angelajubejudy@126.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-        `From: ${formData.firstName} ${formData.lastName} (${formData.email})\n\nReason: ${formData.reason}\n\nMessage:\n${formData.message}`
-      )}`;
-      
-      window.location.href = mailtoLink;
-      
+      // 这里应该调用实际的API
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitSuccess(true);
       setFormData(initialFormData);
     } catch {
-      setSubmitError('Failed to send message. Please try again later.');
+      setSubmitError(t('contact.form.error'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center text-[#6B4F4F] dark:text-gray-200 mb-8">
-        Contact Us
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold text-center text-[#6B4F4F] dark:text-gray-200 mb-12">
+        {t('contact.title')}
       </h1>
-      
+
       {submitSuccess ? (
-        <div className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 p-4 rounded-lg mb-6">
-          <p className="font-semibold">Message sent successfully!</p>
-          <p>We will get back to you as soon as possible.</p>
+        <div className="text-center text-green-600 dark:text-green-400">
+          <h2 className="text-2xl font-bold mb-4">{t('contact.form.success')}</h2>
+          <p>{t('common.thankYou')}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
-          {submitError && (
-            <div className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 p-4 rounded-lg">
-              {submitError}
-            </div>
-          )}
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-300 mb-1">
-                First Name
+              <label htmlFor="firstName" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-200 mb-2">
+                {t('contact.form.firstName')} *
               </label>
               <input
                 type="text"
@@ -115,13 +122,13 @@ export const ContactUsPage: React.FC = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#6B4F4F] dark:focus:ring-gray-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                className="w-full px-4 py-2 rounded-lg border border-[#D5C6C6] focus:ring-2 focus:ring-[#6B4F4F] focus:border-transparent"
               />
             </div>
-            
+
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-300 mb-1">
-                Last Name
+              <label htmlFor="lastName" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-200 mb-2">
+                {t('contact.form.lastName')} *
               </label>
               <input
                 type="text"
@@ -130,14 +137,14 @@ export const ContactUsPage: React.FC = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#6B4F4F] dark:focus:ring-gray-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                className="w-full px-4 py-2 rounded-lg border border-[#D5C6C6] focus:ring-2 focus:ring-[#6B4F4F] focus:border-transparent"
               />
             </div>
           </div>
-          
+
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-300 mb-1">
-              Email
+            <label htmlFor="email" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-200 mb-2">
+              {t('contact.form.email')} *
             </label>
             <input
               type="email"
@@ -146,13 +153,13 @@ export const ContactUsPage: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#6B4F4F] dark:focus:ring-gray-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+              className="w-full px-4 py-2 rounded-lg border border-[#D5C6C6] focus:ring-2 focus:ring-[#6B4F4F] focus:border-transparent"
             />
           </div>
-          
+
           <div>
-            <label htmlFor="reason" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-300 mb-1">
-              Reason For Contact
+            <label htmlFor="reason" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-200 mb-2">
+              {t('contact.form.reason')} *
             </label>
             <select
               id="reason"
@@ -160,19 +167,17 @@ export const ContactUsPage: React.FC = () => {
               value={formData.reason}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#6B4F4F] dark:focus:ring-gray-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+              className="w-full px-4 py-2 rounded-lg border border-[#D5C6C6] focus:ring-2 focus:ring-[#6B4F4F] focus:border-transparent"
             >
               {reasonOptions.map(option => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
+                <option key={option} value={option}>{option}</option>
               ))}
             </select>
           </div>
-          
+
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-300 mb-1">
-              Message
+            <label htmlFor="message" className="block text-sm font-medium text-[#6B4F4F] dark:text-gray-200 mb-2">
+              {t('contact.form.message')} *
             </label>
             <textarea
               id="message"
@@ -180,41 +185,34 @@ export const ContactUsPage: React.FC = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows={5}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#6B4F4F] dark:focus:ring-gray-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
-            ></textarea>
+              rows={6}
+              className="w-full px-4 py-2 rounded-lg border border-[#D5C6C6] focus:ring-2 focus:ring-[#6B4F4F] focus:border-transparent"
+            />
           </div>
-          
-          {/* 在实际应用中，这里应该集成Cloudflare Turnstile */}
-          <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-            <p className="text-sm text-[#8B7E7E] dark:text-gray-400 mb-2">
-              Human Verification (模拟Cloudflare检测)
-            </p>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="humanVerification"
-                checked={isHuman}
-                onChange={() => setIsHuman(!isHuman)}
-                className="h-4 w-4 text-[#6B4F4F] focus:ring-[#6B4F4F] border-gray-300 rounded"
-              />
-              <label htmlFor="humanVerification" className="ml-2 block text-sm text-[#8B7E7E] dark:text-gray-400">
-                I am a human
-              </label>
+
+          {!isHuman && (
+            <div className="text-center text-[#8B7E7E] dark:text-gray-400">
+              {t('common.verifying')}
             </div>
+          )}
+
+          {submitError && (
+            <div className="text-red-600 dark:text-red-400 text-center">
+              {submitError}
+            </div>
+          )}
+
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={isSubmitting || !isHuman}
+              className={`px-8 py-4 bg-[#6B4F4F] text-white rounded-lg font-semibold transition-colors ${
+                (isSubmitting || !isHuman) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#8B7E7E]'
+              }`}
+            >
+              {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
+            </button>
           </div>
-          
-          <button
-            type="submit"
-            disabled={isSubmitting || !isHuman}
-            className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-colors ${
-              isSubmitting || !isHuman
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-[#6B4F4F] hover:bg-[#8B7E7E]'
-            }`}
-          >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-          </button>
         </form>
       )}
     </div>

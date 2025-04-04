@@ -1,0 +1,38 @@
+{
+  "title": "Simple, Transparent Pricing",
+  "free": {
+    "name": "Free",
+    "description": "Perfect for individual developers",
+    "features": [
+      "Access to all tools",
+      "Basic search functionality",
+      "Save up to 10 favorites",
+      "Community support"
+    ]
+  },
+  "pro": {
+    "name": "Pro",
+    "description": "For professional developers",
+    "features": [
+      "Everything in Free",
+      "Advanced search filters",
+      "Unlimited favorites",
+      "Priority support",
+      "Custom categories",
+      "API access"
+    ]
+  },
+  "enterprise": {
+    "name": "Enterprise",
+    "description": "For teams and organizations",
+    "features": [
+      "Everything in Pro",
+      "Team collaboration",
+      "Custom branding",
+      "Dedicated support",
+      "Analytics dashboard",
+      "SSO integration"
+    ]
+  },
+  "selectPlan": "Get Started"
+} 

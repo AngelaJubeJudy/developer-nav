@@ -9,39 +9,34 @@ interface SponsorCard {
 
 const sponsorCards: SponsorCard[] = [
   {
-    title: "Banner Ad",
-    description: "Promote your tool with a banner ad on our homepage",
-    clicks: "~50,000 clicks/month"
-  },
-  {
-    title: "Category Spotlight",
-    description: "Get featured in a specific category page",
-    clicks: "~20,000 clicks/month"
-  },
-  {
-    title: "Email Newsletter",
-    description: "Reach our subscribers directly via email",
-    clicks: "~10,000 clicks/month"
-  },
-  {
-    title: "Featured Tool",
-    description: "Get your tool featured at the top of our homepage",
+    title: "Custom Campaigns",
+    description: "Create a custom marketing campaign tailored to your needs",
     clicks: "~100,000 clicks/month"
   },
   {
-    title: "Social Media",
-    description: "Promote your tool on our social media channels",
-    clicks: "~30,000 clicks/month"
+    title: "Main Sponsor - Newsletter",
+    description: "Get featured in our weekly newsletter to 50,000+ subscribers",
+    clicks: "~50,000 clicks/month"
   },
   {
-    title: "Tool Review",
-    description: "Get a detailed review of your tool on our blog",
-    clicks: "~15,000 clicks/month"
+    title: "#1 Spot in Featured Tools",
+    description: "Get the top spot in our featured tools section",
+    clicks: "~200,000 clicks/month"
   },
   {
-    title: "Video Showcase",
-    description: "Showcase your tool with a video on our platform",
+    title: "Ad in Coming in Hot",
+    description: "Promote your tool in our weekly 'Coming in Hot' section",
+    clicks: "~75,000 clicks/month"
+  },
+  {
+    title: "Classified Ad",
+    description: "Place a classified ad in our directory",
     clicks: "~25,000 clicks/month"
+  },
+  {
+    title: "Deep Sponsorship",
+    description: "Comprehensive sponsorship package with maximum exposure",
+    clicks: "~500,000 clicks/month"
   }
 ];
 
@@ -50,7 +45,8 @@ export const SponsorUsPage: React.FC = () => {
 
   const handleBookNow = (title: string) => {
     // 跳转到邮件发送页面，并设置邮件主题
-    navigate('/contact', { state: { subject: `Sponsorship: ${title}` } });
+    const encodedTitle = title.replace(/ /g, '+');
+    navigate(`/sponsor-us/${encodedTitle}`);
   };
 
   return (
@@ -71,15 +67,17 @@ export const SponsorUsPage: React.FC = () => {
             <p className="text-[#8B7E7E] dark:text-gray-400 mb-4 text-center flex-grow">
               {card.description}
             </p>
-            <p className="text-sm text-[#8B7E7E] dark:text-gray-400 mb-4 text-center">
-              {card.clicks}
-            </p>
-            <button
-              onClick={() => handleBookNow(card.title)}
-              className="w-full py-2 bg-[#6B4F4F] hover:bg-[#8B7E7E] text-white rounded-lg font-semibold transition-colors"
-            >
-              Book Now
-            </button>
+            <div className="flex justify-between items-center mt-auto">
+              <p className="text-sm text-[#8B7E7E] dark:text-gray-400">
+                {card.clicks}
+              </p>
+              <button
+                onClick={() => handleBookNow(card.title)}
+                className="px-4 py-2 bg-[#6B4F4F] hover:bg-[#8B7E7E] text-white rounded-lg font-semibold transition-colors"
+              >
+                Book Now
+              </button>
+            </div>
           </div>
         ))}
       </div>

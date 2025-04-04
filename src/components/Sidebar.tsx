@@ -13,6 +13,7 @@ import {
   X
 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface SidebarProps {
   bookmarks: BookmarkData;
@@ -63,6 +64,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleHomeClick = () => {
     navigate('/');
@@ -132,35 +134,35 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div className="mb-6">
               <NavItem
                 icon={<Home size={20} />}
-                label="Home"
+                label={t('navigation.home')}
                 onClick={handleHomeClick}
                 isActive={isHomeActive}
                 isCollapsed={isSidebarCollapsed}
               />
               <NavItem
                 icon={<Search size={20} />}
-                label="Search"
+                label={t('navigation.search')}
                 onClick={handleSearchClick}
                 isActive={isSearchActive}
                 isCollapsed={isSidebarCollapsed}
               />
               <NavItem
                 icon={<FolderTree size={20} />}
-                label="Categories"
+                label={t('navigation.categories')}
                 onClick={handleCategoriesClick}
                 isActive={isCategoriesActive}
                 isCollapsed={isSidebarCollapsed}
               />
               <NavItem
                 icon={<Upload size={20} />}
-                label="Submit Your Tools"
+                label={t('navigation.submitTool')}
                 onClick={handleSubmitClick}
                 isActive={isSubmitActive}
                 isCollapsed={isSidebarCollapsed}
               />
               <NavItem
                 icon={<Mail size={20} />}
-                label="Contact Us"
+                label={t('navigation.contact')}
                 onClick={handleContactClick}
                 isActive={isContactActive}
                 isCollapsed={isSidebarCollapsed}

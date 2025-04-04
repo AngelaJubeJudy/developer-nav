@@ -1,0 +1,109 @@
+{
+  "navigation": {
+    "newTools": "Nouveaux Outils",
+    "mostSearched": "Les Plus Recherchés",
+    "hottest": "Les Plus Populaires",
+    "demandKeywords": "Demande et Mots-clés",
+    "websiteEssentials": "Essentiels pour Sites Web",
+    "competitorResearch": "Recherche Concurrentielle",
+    "websiteTemplates": "Modèles de Sites Web",
+    "newsAndCommunity": "Actualités et Communauté"
+  },
+  "sections": {
+    "featuredTools": "Outils en Vedette",
+    "allTools": "Tous les Outils",
+    "latestTools": "Derniers Outils",
+    "mostSearched": "Les Plus Recherchés",
+    "hottest": "Les Plus Populaires"
+  },
+  "features": {
+    "title": "Pourquoi Choisir Notre Plateforme",
+    "smartSearch": {
+      "title": "Recherche Intelligente",
+      "description": "Trouvez rapidement les outils dont vous avez besoin avec notre système de recherche intelligent"
+    },
+    "globalCommunity": {
+      "title": "Communauté Mondiale",
+      "description": "Connectez-vous avec des développeurs du monde entier et découvrez les outils tendance"
+    },
+    "saveFavorites": {
+      "title": "Enregistrer les Favoris",
+      "description": "Enregistrez vos outils favoris et accédez-y à tout moment"
+    },
+    "easySharing": {
+      "title": "Partage Facile",
+      "description": "Partagez des outils utiles avec votre équipe et votre réseau"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "submitTool": {
+      "question": "Comment soumettre un nouvel outil ?",
+      "answer": "Vous pouvez soumettre un nouvel outil en cliquant sur le bouton \"Soumettre\" dans le menu de navigation. Remplissez les informations requises sur l'outil, y compris son nom, sa description et son URL. Notre équipe examinera votre soumission et l'ajoutera à la plateforme si elle répond à nos critères."
+    },
+    "toolCategories": {
+      "question": "Comment les outils sont-ils catégorisés ?",
+      "answer": "Les outils sont catégorisés en fonction de leur fonction principale et de leur public cible. Nous utilisons une combinaison de classification automatisée et de révision manuelle pour assurer une catégorisation précise. Si vous trouvez un outil dans la mauvaise catégorie, faites-le nous savoir."
+    },
+    "suggestions": {
+      "question": "Puis-je suggérer des améliorations pour la plateforme ?",
+      "answer": "Absolument ! Nous accueillons les commentaires et suggestions de nos utilisateurs. Vous pouvez soumettre vos idées via le formulaire de contact ou en nous contactant directement. Nous examinons régulièrement les commentaires des utilisateurs pour améliorer la plateforme."
+    },
+    "updates": {
+      "question": "À quelle fréquence la base de données d'outils est-elle mise à jour ?",
+      "answer": "Notre base de données d'outils est mise à jour quotidiennement. De nouveaux outils sont ajoutés lorsqu'ils sont soumis et approuvés, et les entrées existantes sont régulièrement révisées pour assurer leur précision et leur pertinence."
+    }
+  },
+  "pricing": {
+    "title": "Choisissez Votre Plan",
+    "free": {
+      "name": "Gratuit",
+      "description": "Parfait pour les développeurs individuels",
+      "features": [
+        "Accès à tous les outils",
+        "Fonctionnalité de recherche de base",
+        "Enregistrez jusqu'à 10 favoris",
+        "Support communautaire"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Pour les développeurs professionnels",
+      "features": [
+        "Tout ce qui est inclus dans Gratuit",
+        "Filtres de recherche avancés",
+        "Favoris illimités",
+        "Support prioritaire",
+        "Catégories personnalisées",
+        "Accès API"
+      ]
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "description": "Pour les équipes et organisations",
+      "features": [
+        "Tout ce qui est inclus dans Pro",
+        "Collaboration d'équipe",
+        "Marque personnalisée",
+        "Support dédié",
+        "Tableau de bord analytique",
+        "Intégration SSO"
+      ]
+    },
+    "selectPlan": "Commencer"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "form": {
+      "email": "Email",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "reason": "Raison du contact",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Échec de l'envoi du message. Veuillez réessayer plus tard."
+    }
+  }
+} 

@@ -6,6 +6,7 @@ import { SearchPage } from './components/pages/SearchPage';
 import { SubmitToolPage } from './components/pages/SubmitToolPage';
 import { SponsorUsPage } from './components/pages/SponsorUsPage';
 import { ContactUsPage } from './components/pages/ContactUsPage';
+import { SubmitToolFormPage } from './components/pages/SubmitToolFormPage';
 
 export const router = createBrowserRouter([
   {
@@ -25,8 +26,20 @@ export const router = createBrowserRouter([
         element: <SubmitToolPage />,
       },
       {
+        path: 'submit-tool',
+        element: <SubmitToolFormPage />,
+      },
+      {
+        path: 'custom-campaign',
+        element: <ContactUsPage />,
+      },
+      {
         path: 'sponsor-us',
         element: <SponsorUsPage />,
+      },
+      {
+        path: 'sponsor-us/:sponsorType',
+        element: <ContactUsPage />,
       },
       {
         path: 'contact',

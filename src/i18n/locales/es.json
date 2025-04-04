@@ -1,0 +1,109 @@
+{
+  "navigation": {
+    "newTools": "Herramientas Nuevas",
+    "mostSearched": "Más Buscadas",
+    "hottest": "Más Populares",
+    "demandKeywords": "Demanda y Palabras Clave",
+    "websiteEssentials": "Esenciales para Sitios Web",
+    "competitorResearch": "Investigación de Competencia",
+    "websiteTemplates": "Plantillas Web",
+    "newsAndCommunity": "Noticias y Comunidad"
+  },
+  "sections": {
+    "featuredTools": "Herramientas Destacadas",
+    "allTools": "Todas las Herramientas",
+    "latestTools": "Últimas Herramientas",
+    "mostSearched": "Más Buscadas",
+    "hottest": "Más Populares"
+  },
+  "features": {
+    "title": "Por Qué Elegir Nuestra Plataforma",
+    "smartSearch": {
+      "title": "Búsqueda Inteligente",
+      "description": "Encuentra rápidamente las herramientas que necesitas con nuestro sistema de búsqueda inteligente"
+    },
+    "globalCommunity": {
+      "title": "Comunidad Global",
+      "description": "Conéctate con desarrolladores de todo el mundo y descubre herramientas tendencia"
+    },
+    "saveFavorites": {
+      "title": "Guardar Favoritos",
+      "description": "Guarda tus herramientas favoritas y accede a ellas en cualquier momento"
+    },
+    "easySharing": {
+      "title": "Compartir Fácilmente",
+      "description": "Comparte herramientas útiles con tu equipo y red"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "submitTool": {
+      "question": "¿Cómo envío una nueva herramienta?",
+      "answer": "Puedes enviar una nueva herramienta haciendo clic en el botón \"Enviar\" en el menú de navegación. Completa la información requerida sobre la herramienta, incluyendo su nombre, descripción y URL. Nuestro equipo revisará tu envío y lo agregará a la plataforma si cumple con nuestros criterios."
+    },
+    "toolCategories": {
+      "question": "¿Cómo se categorizan las herramientas?",
+      "answer": "Las herramientas se categorizan según su función principal y público objetivo. Utilizamos una combinación de clasificación automatizada y revisión manual para garantizar una categorización precisa. Si encuentras una herramienta en la categoría incorrecta, háganoslo saber."
+    },
+    "suggestions": {
+      "question": "¿Puedo sugerir mejoras para la plataforma?",
+      "answer": "¡Por supuesto! Damos la bienvenida a los comentarios y sugerencias de nuestros usuarios. Puedes enviar tus ideas a través del formulario de contacto o contactándonos directamente. Revisamos regularmente los comentarios de los usuarios para mejorar la plataforma."
+    },
+    "updates": {
+      "question": "¿Con qué frecuencia se actualiza la base de datos de herramientas?",
+      "answer": "Nuestra base de datos de herramientas se actualiza diariamente. Se agregan nuevas herramientas cuando se envían y aprueban, y las entradas existentes se revisan regularmente para garantizar su precisión y relevancia."
+    }
+  },
+  "pricing": {
+    "title": "Elige Tu Plan",
+    "free": {
+      "name": "Gratis",
+      "description": "Perfecto para desarrolladores individuales",
+      "features": [
+        "Acceso a todas las herramientas",
+        "Funcionalidad de búsqueda básica",
+        "Guarda hasta 10 favoritos",
+        "Soporte comunitario"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Para desarrolladores profesionales",
+      "features": [
+        "Todo lo incluido en Gratis",
+        "Filtros de búsqueda avanzados",
+        "Favoritos ilimitados",
+        "Soporte prioritario",
+        "Categorías personalizadas",
+        "Acceso a API"
+      ]
+    },
+    "enterprise": {
+      "name": "Empresa",
+      "description": "Para equipos y organizaciones",
+      "features": [
+        "Todo lo incluido en Pro",
+        "Colaboración en equipo",
+        "Marca personalizada",
+        "Soporte dedicado",
+        "Panel de análisis",
+        "Integración SSO"
+      ],
+      "selectPlan": "Comenzar"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "form": {
+      "email": "Correo electrónico",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "reason": "Motivo del contacto",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+    }
+  }
+} 
