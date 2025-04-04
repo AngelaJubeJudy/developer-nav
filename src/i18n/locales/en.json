@@ -42,7 +42,9 @@
     "hottest": "Hottest",
     "demandKeywords": "Demand & Keywords",
     "websiteEssentials": "Website Essentials",
-    "competitorResearch": "Competitor Research"
+    "competitorResearch": "Competitor Research",
+    "customCampaign": "Custom Campaign",
+    "sponsor": "Sponsor Us"
   },
   "sections": {
     "featuredTools": "Featured Tools",
@@ -87,6 +89,14 @@
     "updates": {
       "question": "How often is the tool database updated?",
       "answer": "Our tool database is updated daily. New tools are added as they are submitted and approved, and existing entries are regularly reviewed for accuracy and relevance."
+    },
+    "customCampaign": {
+      "question": "How do I create a custom campaign?",
+      "answer": "Create a custom marketing campaign to promote your tool or service. We'll provide professional marketing support to help you reach your target audience."
+    },
+    "sponsor": {
+      "question": "How can I sponsor the platform?",
+      "answer": "Sponsor our platform and reach our growing community of AI enthusiasts. We offer various sponsorship packages to meet your marketing needs."
     }
   },
   "pricing": {

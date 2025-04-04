@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface Card {
   title: string;
@@ -10,20 +11,20 @@ interface Card {
 
 const cards: Card[] = [
   {
-    title: 'Submit Tool',
-    description: 'Submit your AI tool to our directory and get exposure to thousands of potential users.',
+    title: 'navigation.submitTool',
+    description: 'faq.submitTool.answer',
     icon: '🚀',
     path: '/submit-tool'
   },
   {
-    title: 'Custom Campaign',
-    description: 'Create a custom marketing campaign to promote your tool or service.',
+    title: 'navigation.customCampaign',
+    description: 'faq.customCampaign.answer',
     icon: '🎯',
     path: '/custom-campaign'
   },
   {
-    title: 'Sponsorship',
-    description: 'Sponsor our platform and reach our growing community of AI enthusiasts.',
+    title: 'navigation.sponsor',
+    description: 'faq.sponsor.answer',
     icon: '💎',
     path: '/sponsor-us'
   }
@@ -31,11 +32,12 @@ const cards: Card[] = [
 
 export const SubmitToolPage: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-center text-[#6B4F4F] dark:text-gray-200 mb-12">
-        Promote Your Tool
+        {t('navigation.submitTool')}
       </h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,10 +49,10 @@ export const SubmitToolPage: React.FC = () => {
           >
             <div className="text-4xl mb-4">{card.icon}</div>
             <h2 className="text-2xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-2">
-              {card.title}
+              {t(card.title)}
             </h2>
             <p className="text-[#8B7E7E] dark:text-gray-400">
-              {card.description}
+              {t(card.description)}
             </p>
           </div>
         ))}

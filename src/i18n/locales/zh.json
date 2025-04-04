@@ -43,7 +43,9 @@
     "demandKeywords": "需求和关键词",
     "websiteEssentials": "网站必备",
     "competitorResearch": "竞品研究",
-    "newsAndCommunity": "新闻和社区"
+    "newsAndCommunity": "新闻和社区",
+    "customCampaign": "定制营销",
+    "sponsor": "赞助我们"
   },
   "sections": {
     "featuredTools": "精选工具",
@@ -88,6 +90,14 @@
     "updates": {
       "question": "工具数据库多久更新一次？",
       "answer": "我们的工具数据库每天更新。新工具在提交并获得批准后会被添加，现有条目也会定期审查以确保准确性和相关性。"
+    },
+    "customCampaign": {
+      "question": "如何创建定制营销活动？",
+      "answer": "创建定制营销活动来推广您的工具或服务。我们将为您提供专业的营销支持，帮助您触达目标用户群体。"
+    },
+    "sponsor": {
+      "question": "如何赞助我们的平台？",
+      "answer": "赞助我们的平台，触达不断增长的AI爱好者社区。我们提供多种赞助方案，满足您的营销需求。"
     }
   },
   "pricing": {
