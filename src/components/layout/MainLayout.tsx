@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { bookmarks } from '../../data/bookmarks';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { PageTitle } from '../common/PageTitle';
 
 export const MainLayout: React.FC = () => {
   const categories = Object.keys(bookmarks).filter(key => key !== 'ALL');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   
   // 根据当前路径生成页面标题
@@ -38,16 +39,37 @@ export const MainLayout: React.FC = () => {
             </Link>
             
             {/* 桌面端导航 */}
-            <nav className="hidden md:flex space-x-8">
-              {categories.map(category => (
-                <Link
-                  key={category}
-                  to={`/category/${category}`}
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  {category}
-                </Link>
-              ))}
+            <nav className="hidden md:flex items-center space-x-6">
+              {categories.map(category => {
+                const subCategories = bookmarks[category] || [];
+                const hasSubCategories = subCategories.length > 0;
+                
+                return (
+                  <div key={category} className="relative group">
+                    <button
+                      className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors py-2"
+                      onClick={() => setActiveDropdown(activeDropdown === category ? null : category)}
+                    >
+                      <span>{category}</span>
+                      {hasSubCategories && <ChevronDown size={16} />}
+                    </button>
+                    
+                    {hasSubCategories && (
+                      <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block">
+                        {subCategories.map((subCat, index) => (
+                          <Link
+                            key={index}
+                            to={`/category/${category}/${subCat.name}`}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            {subCat.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
             
             {/* 移动端菜单按钮 */}
@@ -64,16 +86,37 @@ export const MainLayout: React.FC = () => {
           {isMobileMenuOpen && (
             <nav className="md:hidden py-4 border-t mt-3">
               <div className="flex flex-col space-y-3">
-                {categories.map(category => (
-                  <Link
-                    key={category}
-                    to={`/category/${category}`}
-                    className="text-gray-600 hover:text-gray-900 transition-colors py-1"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {category}
-                  </Link>
-                ))}
+                {categories.map(category => {
+                  const subCategories = bookmarks[category] || [];
+                  const hasSubCategories = subCategories.length > 0;
+                  
+                  return (
+                    <div key={category}>
+                      <button
+                        className="flex items-center justify-between w-full text-gray-600 hover:text-gray-900 py-2"
+                        onClick={() => setActiveDropdown(activeDropdown === category ? null : category)}
+                      >
+                        <span>{category}</span>
+                        {hasSubCategories && <ChevronDown size={16} />}
+                      </button>
+                      
+                      {hasSubCategories && activeDropdown === category && (
+                        <div className="pl-4 mt-2 space-y-2">
+                          {subCategories.map((subCat, index) => (
+                            <Link
+                              key={index}
+                              to={`/category/${category}/${subCat.name}`}
+                              className="block text-sm text-gray-600 hover:text-gray-900"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {subCat.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </nav>
           )}
