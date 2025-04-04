@@ -150,5 +150,13 @@
       "success": "Message sent successfully!",
       "error": "Failed to send message. Please try again later."
     }
+  },
+  "search": {
+    "title": "Search",
+    "subtitle": "Discover Latest Products Quickly As A Developer",
+    "searchResults": "Search Results",
+    "noResults": "No results found for \"{{query}}\"",
+    "popularCategories": "Popular Categories",
+    "featuredTools": "Featured Tools"
   }
 } 

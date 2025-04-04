@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BookmarkData } from '../types';
 import { 
   Menu, 
-  ChevronDown, 
   ChevronRight, 
   ChevronLeft, 
   Home, 
@@ -40,7 +39,7 @@ const NavItem: React.FC<NavItemProps> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`w-full text-left p-3 rounded-lg mb-1 transition-colors flex items-center
+    className={`w-full text-left p-3 rounded-lg mb-1 transition-colors flex items-center justify-center
       ${isActive
         ? 'bg-[#B4A7A7] dark:bg-gray-700 text-white'
         : 'hover:bg-[#D5C6C6] dark:hover:bg-gray-700 text-[#6B4F4F] dark:text-gray-200'
@@ -61,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   isSidebarOpen,
   toggleSidebar,
 }) => {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
@@ -131,7 +130,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </button>
 
           <div className="h-full p-4 overflow-y-auto">
-            <div className="mb-6">
+            <div className="mb-6 flex flex-col items-center">
               <NavItem
                 icon={<Home size={20} />}
                 label={t('navigation.home')}

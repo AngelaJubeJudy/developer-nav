@@ -105,5 +105,13 @@
       "success": "Message envoyé avec succès !",
       "error": "Échec de l'envoi du message. Veuillez réessayer plus tard."
     }
+  },
+  "search": {
+    "title": "Rechercher",
+    "subtitle": "Découvrez Rapidement les Derniers Produits en Tant que Développeur",
+    "searchResults": "Résultats de Recherche",
+    "noResults": "Aucun résultat trouvé pour \"{{query}}\"",
+    "popularCategories": "Catégories Populaires",
+    "featuredTools": "Outils en Vedette"
   }
 } 

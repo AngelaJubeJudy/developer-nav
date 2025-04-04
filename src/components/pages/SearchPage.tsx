@@ -45,10 +45,10 @@ export const SearchPage: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-4">
-          {t('search.title', 'Discover Latest Products Quickly As A Developer.')}
+          {t('navigation.search')}
         </h1>
         <p className="text-lg text-[#8B7E7E] dark:text-gray-400 mb-8">
-          {t('search.subtitle', 'Never lose a tool you love all over the world.')}
+          {t('hero.description')}
         </p>
       </div>
       
@@ -60,7 +60,7 @@ export const SearchPage: React.FC = () => {
         <>
           <div className="mb-12">
             <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
-              {t('search.popularCategories', 'Popular Categories')}
+              {t('sections.allTools')}
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               {categories.map(category => (
@@ -69,7 +69,7 @@ export const SearchPage: React.FC = () => {
                   onClick={() => setSearchQuery(category)}
                   className="px-6 py-2 rounded-full bg-[#F7F3F0] dark:bg-gray-700 text-[#6B4F4F] dark:text-gray-200 hover:bg-[#E8E0DD] dark:hover:bg-gray-600 transition-colors"
                 >
-                  {category}
+                  {t(`navigation.${category.toLowerCase().replace(/\s+/g, '')}`)}
                 </button>
               ))}
             </div>
@@ -77,7 +77,7 @@ export const SearchPage: React.FC = () => {
 
           <div className="mb-12">
             <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
-              {t('search.featuredTools', 'Featured Tools')}
+              {t('sections.featuredTools')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredTools.map((item, index) => (
@@ -91,7 +91,7 @@ export const SearchPage: React.FC = () => {
       {searchQuery && (
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6 text-center">
-            {t('search.searchResults', 'Search Results')}
+            {t('search.searchResults')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {searchResults.map((item, index) => (
@@ -100,7 +100,7 @@ export const SearchPage: React.FC = () => {
           </div>
           {searchResults.length === 0 && (
             <div className="text-center text-[#8B7E7E] dark:text-gray-400 mt-8">
-              {t('search.noResults', 'No results found for "{{query}}"', { query: searchQuery })}
+              {t('search.noResults', { query: searchQuery })}
             </div>
           )}
         </div>

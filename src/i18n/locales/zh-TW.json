@@ -105,5 +105,13 @@
       "success": "消息發送成功！",
       "error": "消息發送失敗。請稍後重試。"
     }
+  },
+  "search": {
+    "title": "搜尋",
+    "subtitle": "快速發現最新的開發者產品",
+    "searchResults": "搜尋結果",
+    "noResults": "未找到與\"{{query}}\"相關的結果",
+    "popularCategories": "熱門分類",
+    "featuredTools": "精選工具"
   }
 } 
