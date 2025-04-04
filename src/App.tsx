@@ -4,7 +4,8 @@ import { bookmarks } from './data/bookmarks';
 import { Sidebar } from './components/Sidebar';
 import { SearchBar } from './components/SearchBar';
 import { BookmarkCard } from './components/BookmarkCard';
-import { BookmarkCategory } from './types';
+import { BookmarkCategory, BookmarkItem } from './types';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -15,7 +16,7 @@ const languages = [
 ];
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState(Object.keys(bookmarks)[0]);
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('en');
@@ -26,6 +27,10 @@ function App() {
     }
     return false;
   });
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isDetailPage = location.pathname.includes('/resources/');
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDarkMode);
@@ -56,18 +61,29 @@ function App() {
       }, {} as Record<string, BookmarkCategory[]>)
     : bookmarks;
 
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    if (isDetailPage) {
+      navigate('/');
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#F7F3F0] dark:bg-gray-900 transition-colors duration-200">
+    <div className="flex min-h-screen bg-[#F7F3F0] dark:bg-gray-900 transition-colors duration-200">
       <Sidebar
         bookmarks={bookmarks}
         selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
+        onSelectCategory={handleCategorySelect}
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
       />
 
-      <main className={`transition-all duration-300 ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'} p-8`}>
-        <div className="max-w-6xl mx-auto">
+      <main 
+        className={`flex-1 min-h-screen transition-all duration-300
+          ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'}
+          ${!isSidebarOpen && 'ml-0'}`}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <header className="text-center mb-12">
             <div className="flex justify-end mb-4">
               <button
@@ -107,25 +123,29 @@ function App() {
             </div>
           </header>
 
-          <section>
-            {Object.entries(filteredBookmarks).map(([category, items]) => (
-              <div
-                key={category}
-                className={`mb-12 ${
-                  selectedCategory === category ? 'block' : 'hidden'
-                }`}
-              >
-                <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6">
-                  {category}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {items.map((item, index) => (
-                    <BookmarkCard key={index} item={item} />
-                  ))}
+          {isDetailPage ? (
+            <Outlet />
+          ) : (
+            <section>
+              {Object.entries(filteredBookmarks).map(([category, items]) => (
+                <div
+                  key={category}
+                  className={`mb-12 ${
+                    selectedCategory === category ? 'block' : 'hidden'
+                  }`}
+                >
+                  <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-6">
+                    {category}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.map((item, index) => (
+                      <BookmarkCard key={index} item={item as unknown as BookmarkItem} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </section>
+              ))}
+            </section>
+          )}
 
           <footer className="text-center mt-16 pb-8 text-[#8B7E7E] dark:text-gray-400">
             <p className="mb-2">Never lose a tool you love all over the world.</p>

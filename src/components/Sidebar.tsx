@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BookmarkData } from '../types';
-import { Menu, ChevronDown, ChevronRight, ChevronLeft, ChevronUp, Flame } from 'lucide-react';
+import { BookmarkData, BookmarkItem } from '../types';
+import { Menu, ChevronDown, ChevronRight, ChevronLeft, Flame } from 'lucide-react';
 
 interface SidebarProps {
   bookmarks: BookmarkData;
@@ -12,7 +12,7 @@ interface SidebarProps {
 
 interface CategoryItemProps {
   name: string;
-  items?: any[];
+  items?: BookmarkItem[];
   level?: number;
   isSelected: boolean;
   onSelect: (category: string) => void;
@@ -29,15 +29,21 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
   const hasSubItems = items && items.length > 0;
   const paddingLeft = `${level * 1}rem`;
 
+  // 特殊处理ALL分类，点击后直接回到主页
+  const handleClick = () => {
+    onSelect(name);
+    if (name === "ALL") {
+      return; // ALL分类不需要展开/收起
+    }
+    if (hasSubItems) {
+      setIsExpanded(!isExpanded);
+    }
+  };
+
   return (
     <div>
       <button
-        onClick={() => {
-          onSelect(name);
-          if (hasSubItems) {
-            setIsExpanded(!isExpanded);
-          }
-        }}
+        onClick={handleClick}
         className={`w-full text-left p-3 rounded-lg mb-1 transition-colors flex items-center
           ${isSelected
             ? 'bg-[#B4A7A7] dark:bg-gray-700 text-white'
@@ -45,7 +51,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
           }`}
         style={{ paddingLeft: paddingLeft }}
       >
-        {hasSubItems && (
+        {hasSubItems && name !== "ALL" && (
           <span className="mr-2">
             {isExpanded ? (
               <ChevronDown size={16} className="inline" />
@@ -56,7 +62,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
         )}
         <span className="flex-1">{name}</span>
       </button>
-      {hasSubItems && isExpanded && (
+      {hasSubItems && isExpanded && name !== "ALL" && (
         <div className="ml-4">
           {items.map((item, index) => (
             <CategoryItem
@@ -93,23 +99,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
+  // 将ALL分类置顶
+  const sortedCategories = Object.entries(bookmarks).sort(([categoryA], [categoryB]) => {
+    if (categoryA === "ALL") return -1;
+    if (categoryB === "ALL") return 1;
+    return categoryA.localeCompare(categoryB);
+  });
+
   return (
     <>
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-[#E8E1D9] dark:bg-gray-800 rounded-md"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 hover:bg-[#D5C6C6] dark:hover:bg-gray-700 rounded-md"
         onClick={toggleSidebar}
       >
         <Menu size={24} className="text-[#6B4F4F] dark:text-gray-200" />
       </button>
-      <div
-        className={`fixed top-0 left-0 h-full bg-[#E8E1D9] dark:bg-gray-800 transform transition-all duration-300 ease-in-out z-40 
+      <aside
+        className={`fixed lg:relative top-0 left-0 h-screen flex-shrink-0 transform transition-all duration-300 ease-in-out z-40
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           ${isSidebarCollapsed ? 'w-16' : 'w-64'}`}
       >
-        <div className="p-4 overflow-y-auto h-full relative">
+        <div className="h-full relative border-r border-[#D5C6C6] dark:border-gray-700">
+          {/* 将展开/收起按钮移到导航边框中部 */}
           <button
             onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className="absolute right-2 top-2 p-2 rounded-full hover:bg-[#D5C6C6] dark:hover:bg-gray-700 transition-colors"
+            className="absolute -right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full hover:bg-[#D5C6C6] dark:hover:bg-gray-700 transition-colors bg-[#F7F3F0] dark:bg-gray-900 shadow-md"
           >
             {isSidebarCollapsed ? (
               <ChevronRight size={20} className="text-[#6B4F4F] dark:text-gray-200" />
@@ -118,42 +132,44 @@ export const Sidebar: React.FC<SidebarProps> = ({
             )}
           </button>
 
-          {!isSidebarCollapsed && (
-            <>
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold mb-4 text-[#6B4F4F] dark:text-gray-200">Featured</h2>
-                <FeaturedCategory
-                  title="🔥 Latest Weekly"
-                  icon={<Flame size={16} className="text-orange-500" />}
-                />
-                <FeaturedCategory
-                  title="🔥 Most Searched"
-                  icon={<Flame size={16} className="text-orange-500" />}
-                />
-                <FeaturedCategory
-                  title="🔥 Top By Regions"
-                  icon={<Flame size={16} className="text-orange-500" />}
-                />
-              </div>
+          <div className="h-full p-4 overflow-y-auto">
+            {!isSidebarCollapsed && (
+              <>
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold mb-4 text-[#6B4F4F] dark:text-gray-200">Featured</h2>
+                  <FeaturedCategory
+                    title="🔥 Latest Weekly"
+                    icon={<Flame size={16} className="text-orange-500" />}
+                  />
+                  <FeaturedCategory
+                    title="🔥 Most Searched"
+                    icon={<Flame size={16} className="text-orange-500" />}
+                  />
+                  <FeaturedCategory
+                    title="🔥 Top By Regions"
+                    icon={<Flame size={16} className="text-orange-500" />}
+                  />
+                </div>
 
-              <div>
-                <h2 className="text-2xl font-bold mb-4 text-[#6B4F4F] dark:text-gray-200">Categories</h2>
-                <nav className="space-y-1">
-                  {Object.entries(bookmarks).map(([category, items]) => (
-                    <CategoryItem
-                      key={category}
-                      name={category}
-                      items={items}
-                      isSelected={selectedCategory === category}
-                      onSelect={onSelectCategory}
-                    />
-                  ))}
-                </nav>
-              </div>
-            </>
-          )}
+                <div>
+                  <h2 className="text-2xl font-bold mb-4 text-[#6B4F4F] dark:text-gray-200">Categories</h2>
+                  <nav className="space-y-1">
+                    {sortedCategories.map(([category, items]) => (
+                      <CategoryItem
+                        key={category}
+                        name={category}
+                        items={items}
+                        isSelected={selectedCategory === category}
+                        onSelect={onSelectCategory}
+                      />
+                    ))}
+                  </nav>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };

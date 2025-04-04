@@ -3,16 +3,27 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=11.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "source ~/.nvm/nvm.sh && nvm use 21 && npm install && npm run dev",
+    "build:clean": "source ~/.nvm/nvm.sh && nvm use 21 && rm -rf node_modules && npm install && npm run build",
+    "check-versions": "node -v && npm -v",
+    "setup": "source ~/.nvm/nvm.sh && nvm use 21 && npm install",
+    "deploy": "npm run build:clean"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
