@@ -130,7 +130,7 @@
     "featuredTools": "Outils en Vedette"
   },
   "sponsorUs": {
-    "title": "Options de Sponsoring",
+    "title": "Options de Parrainage",
     "bookNow": "Réserver Maintenant",
     "cards": {
       "customCampaigns": {
@@ -140,16 +140,16 @@
       },
       "mainSponsor": {
         "title": "Sponsor Principal - Newsletter",
-        "description": "Mettez en avant auprès de plus de 50,000 abonnés dans notre newsletter hebdomadaire",
+        "description": "Présentez-vous à plus de 50,000 abonnés dans notre newsletter hebdomadaire",
         "clicks": "~50,000 clics/mois"
       },
       "featuredTools": {
-        "title": "#1 dans les Outils en Vedette",
-        "description": "Obtenez la première place dans notre section d'outils en vedette",
+        "title": "#1 dans les Outils Mis en Avant",
+        "description": "Obtenez la première place dans notre section d'outils mis en avant",
         "clicks": "~200,000 clics/mois"
       },
       "comingInHot": {
-        "title": "Publicité Coming in Hot",
+        "title": "Annonce Coming in Hot",
         "description": "Promouvez votre outil dans notre section hebdomadaire 'Coming in Hot'",
         "clicks": "~75,000 clics/mois"
       },
@@ -159,8 +159,8 @@
         "clicks": "~25,000 clics/mois"
       },
       "deepSponsorship": {
-        "title": "Sponsoring Approfondi",
-        "description": "Forfait de sponsoring complet avec exposition maximale",
+        "title": "Parrainage Approfondi",
+        "description": "Forfait de parrainage complet avec exposition maximale",
         "clicks": "~500,000 clics/mois"
       }
     }
@@ -204,5 +204,14 @@
     "email": "Adresse e-mail",
     "phone": "Téléphone",
     "address": "Adresse"
+  },
+  "resourceDetail": {
+    "back": "Retour",
+    "backToHome": "Retour à l'Accueil",
+    "resourceNotFound": "Ressource non trouvée",
+    "visitOfficialWebsite": "Visiter le Site Web Officiel",
+    "tags": "Tags",
+    "about": "À propos",
+    "defaultDescription": "C'est un outil de développement qui peut vous aider à améliorer votre efficacité au travail. Cliquez sur le bouton 'Visiter le Site Web Officiel' ci-dessus pour en savoir plus."
   }
 } 

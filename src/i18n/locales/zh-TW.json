@@ -241,5 +241,14 @@
     "email": "郵箱",
     "phone": "電話",
     "address": "地址"
+  },
+  "resourceDetail": {
+    "back": "返回",
+    "backToHome": "返回首頁",
+    "resourceNotFound": "資源未找到",
+    "visitOfficialWebsite": "訪問官方網站",
+    "tags": "標籤",
+    "about": "關於",
+    "defaultDescription": "這是一個開發者工具，可以幫助您提高工作效率。點擊上方的\"訪問官方網站\"按鈕，了解更多信息。"
   }
 } 

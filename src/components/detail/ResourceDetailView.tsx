@@ -5,6 +5,7 @@ import { BookmarkItem } from '../../types';
 import { ArrowLeft, ExternalLink, Share2 } from 'lucide-react';
 import { ShareButtons } from '../common/ShareButtons';
 import { addUtmSource } from '../../utils/url';
+import { useTranslation } from 'react-i18next';
 
 export const ResourceDetailView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -12,6 +13,7 @@ export const ResourceDetailView: React.FC = () => {
   const [resource, setResource] = useState<BookmarkItem | null>(null);
   const [loading, setLoading] = useState(true);
   const [showShareButtons, setShowShareButtons] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // 解码 URL 参数
@@ -55,13 +57,13 @@ export const ResourceDetailView: React.FC = () => {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-4">
-          资源未找到
+          {t('resourceDetail.resourceNotFound')}
         </h2>
         <button
           onClick={() => navigate('/')}
           className="px-4 py-2 bg-[#B4A7A7] text-white rounded-lg hover:bg-[#6B4F4F] transition-colors"
         >
-          返回首页
+          {t('resourceDetail.backToHome')}
         </button>
       </div>
     );
@@ -79,7 +81,7 @@ export const ResourceDetailView: React.FC = () => {
           className="flex items-center text-[#6B4F4F] dark:text-gray-300 hover:text-[#B4A7A7] dark:hover:text-gray-100 transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
-          返回
+          {t('resourceDetail.back')}
         </button>
         
         <button
@@ -124,14 +126,14 @@ export const ResourceDetailView: React.FC = () => {
           className="inline-flex items-center px-4 py-2 bg-[#B4A7A7] text-white rounded-lg hover:bg-[#6B4F4F] transition-colors"
         >
           <ExternalLink size={18} className="mr-2" />
-          访问官方网站
+          {t('resourceDetail.visitOfficialWebsite')}
         </a>
       </div>
       
       {resource.tags && resource.tags.length > 0 && (
         <div className="mb-8">
           <h2 className="text-xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-3">
-            标签
+            {t('resourceDetail.tags')}
           </h2>
           <div className="flex flex-wrap gap-2">
             {resource.tags.map((tag, index) => (
@@ -148,10 +150,10 @@ export const ResourceDetailView: React.FC = () => {
       
       <div className="prose max-w-none dark:prose-invert">
         <h2 className="text-xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-3">
-          关于
+          {t('resourceDetail.about')}
         </h2>
         <p className="text-[#8B7E7E] dark:text-gray-400">
-          这是一个开发者工具，可以帮助您提高工作效率。点击上方的"访问官方网站"按钮，了解更多信息。
+          {resource.description || t('resourceDetail.defaultDescription')}
         </p>
       </div>
     </div>

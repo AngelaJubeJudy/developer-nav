@@ -281,5 +281,14 @@
         "clicks": "约500,000次点击/月"
       }
     }
+  },
+  "resourceDetail": {
+    "back": "返回",
+    "backToHome": "返回首页",
+    "resourceNotFound": "资源未找到",
+    "visitOfficialWebsite": "访问官方网站",
+    "tags": "标签",
+    "about": "关于",
+    "defaultDescription": "这是一个开发者工具，可以帮助您提高工作效率。点击上方的\"访问官方网站\"按钮，了解更多信息。"
   }
 } 

@@ -286,5 +286,14 @@
         "clicks": "~500,000 clicks/month"
       }
     }
+  },
+  "resourceDetail": {
+    "back": "Back",
+    "backToHome": "Back to Home",
+    "resourceNotFound": "Resource not found",
+    "visitOfficialWebsite": "Visit Official Website",
+    "tags": "Tags",
+    "about": "About",
+    "defaultDescription": "This is a developer tool that can help you improve your work efficiency. Click the 'Visit Official Website' button above to learn more."
   }
 } 

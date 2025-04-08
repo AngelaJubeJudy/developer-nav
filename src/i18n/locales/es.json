@@ -187,12 +187,12 @@
     "cards": {
       "customCampaigns": {
         "title": "Campañas Personalizadas",
-        "description": "Crea una campaña de marketing personalizada",
+        "description": "Crea una campaña de marketing a medida",
         "clicks": "~100,000 clics/mes"
       },
       "mainSponsor": {
         "title": "Patrocinador Principal - Boletín",
-        "description": "Destácate en nuestro boletín semanal a más de 50,000 suscriptores",
+        "description": "Muestra a más de 50,000 suscriptores en nuestro boletín semanal",
         "clicks": "~50,000 clics/mes"
       },
       "featuredTools": {
@@ -201,7 +201,7 @@
         "clicks": "~200,000 clics/mes"
       },
       "comingInHot": {
-        "title": "Anuncio en Coming in Hot",
+        "title": "Anuncio Coming in Hot",
         "description": "Promociona tu herramienta en nuestra sección semanal 'Coming in Hot'",
         "clicks": "~75,000 clics/mes"
       },
@@ -256,5 +256,14 @@
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "address": "Dirección"
+  },
+  "resourceDetail": {
+    "back": "Volver",
+    "backToHome": "Volver al Inicio",
+    "resourceNotFound": "Recurso no encontrado",
+    "visitOfficialWebsite": "Visitar Sitio Web Oficial",
+    "tags": "Etiquetas",
+    "about": "Acerca de",
+    "defaultDescription": "Esta es una herramienta de desarrollo que puede ayudarte a mejorar tu eficiencia laboral. Haz clic en el botón 'Visitar Sitio Web Oficial' arriba para obtener más información."
   }
 } 
