@@ -233,5 +233,41 @@
         ]
       }
     }
+  },
+  "sponsorUs": {
+    "title": "Sponsorship Options",
+    "bookNow": "Book Now",
+    "cards": {
+      "customCampaigns": {
+        "title": "Custom Campaigns",
+        "description": "Create a tailored marketing campaign",
+        "clicks": "~100,000 clicks/month"
+      },
+      "mainSponsor": {
+        "title": "Main Sponsor - Newsletter",
+        "description": "Showcase to 50,000+ subscribers in our weekly newsletter",
+        "clicks": "~50,000 clicks/month"
+      },
+      "featuredTools": {
+        "title": "#1 in Featured Tools",
+        "description": "Get the top spot in our featured tools section",
+        "clicks": "~200,000 clicks/month"
+      },
+      "comingInHot": {
+        "title": "Coming in Hot Ad",
+        "description": "Promote your tool in our weekly 'Coming in Hot' section",
+        "clicks": "~75,000 clicks/month"
+      },
+      "classifiedAd": {
+        "title": "Classified Ad",
+        "description": "Place a classified ad in our directory",
+        "clicks": "~25,000 clicks/month"
+      },
+      "deepSponsorship": {
+        "title": "Deep Sponsorship",
+        "description": "Comprehensive sponsorship package with maximum exposure",
+        "clicks": "~500,000 clicks/month"
+      }
+    }
   }
 } 

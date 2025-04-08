@@ -113,5 +113,41 @@
     "noResults": "Aucun résultat trouvé pour \"{{query}}\"",
     "popularCategories": "Catégories Populaires",
     "featuredTools": "Outils en Vedette"
+  },
+  "sponsorUs": {
+    "title": "Options de Sponsoring",
+    "bookNow": "Réserver Maintenant",
+    "cards": {
+      "customCampaigns": {
+        "title": "Campagnes Personnalisées",
+        "description": "Créez une campagne marketing sur mesure",
+        "clicks": "~100,000 clics/mois"
+      },
+      "mainSponsor": {
+        "title": "Sponsor Principal - Newsletter",
+        "description": "Mettez en avant auprès de plus de 50,000 abonnés dans notre newsletter hebdomadaire",
+        "clicks": "~50,000 clics/mois"
+      },
+      "featuredTools": {
+        "title": "#1 dans les Outils en Vedette",
+        "description": "Obtenez la première place dans notre section d'outils en vedette",
+        "clicks": "~200,000 clics/mois"
+      },
+      "comingInHot": {
+        "title": "Publicité Coming in Hot",
+        "description": "Promouvez votre outil dans notre section hebdomadaire 'Coming in Hot'",
+        "clicks": "~75,000 clics/mois"
+      },
+      "classifiedAd": {
+        "title": "Annonce Classée",
+        "description": "Placez une annonce classée dans notre répertoire",
+        "clicks": "~25,000 clics/mois"
+      },
+      "deepSponsorship": {
+        "title": "Sponsoring Approfondi",
+        "description": "Forfait de sponsoring complet avec exposition maximale",
+        "clicks": "~500,000 clics/mois"
+      }
+    }
   }
 } 
