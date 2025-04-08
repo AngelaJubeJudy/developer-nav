@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResourceBase } from '../../types';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import { bookmarks } from '../../data/bookmarks';
 
 interface ResourceListProps {
@@ -13,6 +13,12 @@ export const ResourceList: React.FC<ResourceListProps> = ({
 }) => {
   const loaderData = useLoaderData() as { category?: string } | undefined;
   const category = loaderData?.category;
+  const location = useLocation();
+  
+  // 获取当前路径作为来源页面
+  const getFromPath = () => {
+    return location.pathname;
+  };
   
   const filteredResources = category
     ? resources.filter((resource) => resource.tags.includes(category))
@@ -58,6 +64,7 @@ export const ResourceList: React.FC<ResourceListProps> = ({
           <Link
             key={resource.id}
             to={`/resources/${resource.category}/${resource.id}`}
+            state={{ from: getFromPath() }}
             className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="flex items-center gap-4 mb-4">

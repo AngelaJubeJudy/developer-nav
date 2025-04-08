@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookmarkItem } from '../types';
 import { ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { addUtmSource } from '../utils/url';
 
 interface BookmarkCardProps {
@@ -19,6 +19,13 @@ const getHostname = (url: string): string => {
 };
 
 export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item, onCategorySelect }) => {
+  const location = useLocation();
+  
+  // 获取当前路径作为来源页面
+  const getFromPath = () => {
+    return location.pathname;
+  };
+
   if (item.items) {
     return (
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
@@ -28,6 +35,7 @@ export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item, onCategorySele
             <Link
               key={index}
               to={`/resources/resource/${encodeURIComponent(subItem.name || getHostname(subItem.url))}`}
+              state={{ from: getFromPath() }}
               className="flex items-center text-sm text-[#8B7E7E] dark:text-gray-400 hover:text-[#6B4F4F] dark:hover:text-gray-200 transition-colors"
             >
               <ExternalLink size={14} className="mr-2" />
@@ -44,6 +52,7 @@ export const BookmarkCard: React.FC<BookmarkCardProps> = ({ item, onCategorySele
   return (
     <Link
       to={`/resources/resource/${encodeURIComponent(item.name || getHostname(item.url))}`}
+      state={{ from: getFromPath() }}
       className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
     >
       <div className="flex items-start mb-3">

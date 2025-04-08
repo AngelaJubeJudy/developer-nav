@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { bookmarks } from '../../data/bookmarks';
 import { BookmarkItem } from '../../types';
 import { ArrowLeft, ExternalLink, Share2 } from 'lucide-react';
@@ -10,10 +10,24 @@ import { useTranslation } from 'react-i18next';
 export const ResourceDetailView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const [resource, setResource] = useState<BookmarkItem | null>(null);
   const [loading, setLoading] = useState(true);
   const [showShareButtons, setShowShareButtons] = useState(false);
   const { t } = useTranslation();
+
+  // 获取来源页面
+  const getBackPath = () => {
+    // 从 location.state 中获取来源页面
+    const from = location.state?.from;
+    
+    if (from) {
+      return from;
+    }
+    
+    // 如果没有来源信息，默认返回首页
+    return '/';
+  };
 
   useEffect(() => {
     // 解码 URL 参数
@@ -77,7 +91,7 @@ export const ResourceDetailView: React.FC = () => {
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
       <div className="flex justify-between items-center mb-6">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate(getBackPath())}
           className="flex items-center text-[#6B4F4F] dark:text-gray-300 hover:text-[#B4A7A7] dark:hover:text-gray-100 transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
