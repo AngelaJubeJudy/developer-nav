@@ -183,5 +183,26 @@
   "common": {
     "toolCount": "Nombre d'Outils",
     "now": "MAINTENANT"
+  },
+  "footer": {
+    "title": "Outils de Développeur",
+    "description": "Découvrez rapidement les derniers produits en tant que développeur - Ne perdez jamais un outil que vous aimez dans le monde entier.",
+    "quickLinks": "Liens Rapides",
+    "about": "À Propos",
+    "contact": "Contact",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "contactUs": "Contactez-nous",
+    "copyright": "Outils de Développeur. Tous droits réservés.",
+    "createdBy": "Créé par Angela à NYC",
+    "social": "Réseaux Sociaux",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Abonnez-vous à notre newsletter pour les mises à jour",
+    "emailPlaceholder": "Votre Adresse e-mail",
+    "subscribe": "S'abonner",
+    "rights": "Tous droits réservés",
+    "email": "Adresse e-mail",
+    "phone": "Téléphone",
+    "address": "Adresse"
   }
 } 

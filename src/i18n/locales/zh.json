@@ -33,9 +33,12 @@
     "social": "社交媒体",
     "newsletter": "订阅通讯",
     "newsletterDesc": "订阅我们的通讯以获取最新更新",
-    "emailPlaceholder": "输入您的邮箱",
+    "emailPlaceholder": "您的邮箱",
     "subscribe": "订阅",
-    "rights": "保留所有权利"
+    "rights": "保留所有权利",
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "地址"
   },
   "navigation": {
     "home": "首页",

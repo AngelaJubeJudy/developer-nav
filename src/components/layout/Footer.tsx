@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa6';
+import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -14,14 +15,17 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">{t('footer.social')}</h3>
             <div className="flex space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                <FaGithub size={24} />
-              </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                <FaTwitter size={24} />
+                <FaXTwitter size={24} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaLinkedin size={24} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                <FaYoutube size={24} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                <FaFacebook size={24} />
               </a>
             </div>
           </div>
@@ -48,11 +52,10 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">{t('footer.contact')}</h3>
-            <ul className="space-y-2">
-              <li>Email: contact@example.com</li>
-              <li>Phone: +1 234 567 890</li>
-              <li>Address: 123 Developer Street</li>
-            </ul>
+            <Link to="/contact" className="flex items-center hover:text-gray-300 group">
+              <span>{t('footer.contactUs')}</span>
+              <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={14} />
+            </Link>
           </div>
 
           {/* Newsletter */}

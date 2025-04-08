@@ -33,9 +33,12 @@
     "social": "Social Media",
     "newsletter": "Newsletter",
     "newsletterDesc": "Subscribe to our newsletter for updates",
-    "emailPlaceholder": "Enter your email",
+    "emailPlaceholder": "Your Email",
     "subscribe": "Subscribe",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
   },
   "navigation": {
     "home": "Home",

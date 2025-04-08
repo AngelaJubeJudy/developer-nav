@@ -235,5 +235,26 @@
   "common": {
     "toolCount": "Cantidad de Herramientas",
     "now": "AHORA"
+  },
+  "footer": {
+    "title": "Herramientas de Desarrollo",
+    "description": "Descubre rápidamente los últimos productos como desarrollador - Nunca pierdas una herramienta que te gusta en todo el mundo.",
+    "quickLinks": "Enlaces Rápidos",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contactUs": "Contáctanos",
+    "copyright": "Herramientas de Desarrollo. Todos los derechos reservados.",
+    "createdBy": "Creado por Angela en NYC",
+    "social": "Redes Sociales",
+    "newsletter": "Boletín",
+    "newsletterDesc": "Suscríbete a nuestro boletín para actualizaciones",
+    "emailPlaceholder": "Tu Correo electrónico",
+    "subscribe": "Suscribirse",
+    "rights": "Todos los derechos reservados",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "address": "Dirección"
   }
 } 
