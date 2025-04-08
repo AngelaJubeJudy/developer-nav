@@ -4,6 +4,7 @@ import { bookmarks } from '../../data/bookmarks';
 import { BookmarkItem } from '../../types';
 import { ArrowLeft, ExternalLink, Share2 } from 'lucide-react';
 import { ShareButtons } from '../common/ShareButtons';
+import { addUtmSource } from '../../utils/url';
 
 export const ResourceDetailView: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -117,7 +118,7 @@ export const ResourceDetailView: React.FC = () => {
       
       <div className="mb-8">
         <a
-          href={resource.url.startsWith('http') ? resource.url : `https://${resource.url}`}
+          href={addUtmSource(resource.url)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center px-4 py-2 bg-[#B4A7A7] text-white rounded-lg hover:bg-[#6B4F4F] transition-colors"

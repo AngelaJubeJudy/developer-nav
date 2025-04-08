@@ -2,6 +2,7 @@ import React from 'react';
 import { BookmarkItem } from '../types';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { addUtmSource } from '../utils/url';
 
 interface BookmarkCardProps {
   item: BookmarkItem;

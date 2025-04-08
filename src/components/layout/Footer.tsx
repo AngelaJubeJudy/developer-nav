@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FaXTwitter, FaLinkedin, FaYoutube, FaFacebook } from 'react-icons/fa6';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { addUtmSource } from '../../utils/url';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -15,16 +16,16 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">{t('footer.social')}</h3>
             <div className="flex space-x-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href={addUtmSource('https://twitter.com')} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaXTwitter size={24} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href={addUtmSource('https://linkedin.com')} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaLinkedin size={24} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href={addUtmSource('https://youtube.com')} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaYoutube size={24} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href={addUtmSource('https://facebook.com')} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 <FaFacebook size={24} />
               </a>
             </div>
@@ -35,16 +36,28 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="hover:text-gray-300">{t('footer.about')}</Link>
+                <Link to="/about" className="hover:text-gray-300 flex items-center">
+                  <FaArrowRight className="mr-2" size={12} />
+                  {t('footer.about')}
+                </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gray-300">{t('footer.contact')}</Link>
+                <Link to="/contact" className="hover:text-gray-300 flex items-center">
+                  <FaArrowRight className="mr-2" size={12} />
+                  {t('footer.contact')}
+                </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-gray-300">{t('footer.privacy')}</Link>
+                <Link to="/privacy" className="hover:text-gray-300 flex items-center">
+                  <FaArrowRight className="mr-2" size={12} />
+                  {t('footer.privacy')}
+                </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-gray-300">{t('footer.terms')}</Link>
+                <Link to="/terms" className="hover:text-gray-300 flex items-center">
+                  <FaArrowRight className="mr-2" size={12} />
+                  {t('footer.terms')}
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,10 +65,18 @@ const Footer: React.FC = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">{t('footer.contact')}</h3>
-            <Link to="/contact" className="flex items-center hover:text-gray-300 group">
-              <span>{t('footer.contactUs')}</span>
-              <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={14} />
-            </Link>
+            <ul className="space-y-2">
+              <li>
+                <a href={`mailto:${t('footer.email')}`} className="hover:text-gray-300">
+                  {t('footer.email')}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${t('footer.phone')}`} className="hover:text-gray-300">
+                  {t('footer.phone')}
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Newsletter */}
@@ -66,11 +87,11 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder={t('footer.emailPlaceholder')}
-                className="px-4 py-2 rounded-l text-gray-800 w-full"
+                className="px-4 py-2 rounded-l-lg w-full text-gray-900"
               />
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r"
+                className="bg-[#B4A7A7] text-white px-4 py-2 rounded-r-lg hover:bg-[#6B4F4F] transition-colors"
               >
                 {t('footer.subscribe')}
               </button>
@@ -78,9 +99,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Developer Nav. {t('footer.rights')}</p>
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+          <p>&copy; {new Date().getFullYear()} {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
