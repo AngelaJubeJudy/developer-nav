@@ -58,13 +58,13 @@ export const FixedLayout: React.FC<FixedLayoutProps> = ({
         ${!isSidebarOpen && 'ml-0'}`}>
         
         {/* 固定顶部栏 */}
-        <div className="fixed top-0 right-0 left-0 z-40 bg-white dark:bg-gray-800 shadow-sm">
+        <div className="fixed top-0 right-0 left-0 z-30 bg-white dark:bg-gray-800 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div className="flex justify-end items-center space-x-4">
               {/* 分享按钮 */}
               <button
                 onClick={toggleShareButtons}
-                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors hidden sm:block"
                 aria-label={t('features.easySharing.title')}
               >
                 <Share2 className="text-[#6B4F4F] dark:text-gray-200" size={24} />
@@ -84,7 +84,7 @@ export const FixedLayout: React.FC<FixedLayoutProps> = ({
               </button>
 
               {/* 语言切换 */}
-              <div className="flex items-center space-x-2 text-sm text-[#8B7E7E] dark:text-gray-400">
+              <div className="hidden sm:flex items-center space-x-2 text-sm text-[#8B7E7E] dark:text-gray-400">
                 <Globe size={16} />
                 {languages.map((lang) => (
                   <button

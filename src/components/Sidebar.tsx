@@ -107,7 +107,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 hover:bg-[#D5C6C6] dark:hover:bg-gray-700 rounded-md"
+        className="lg:hidden fixed top-4 left-4 z-40 p-2 hover:bg-[#D5C6C6] dark:hover:bg-gray-700 rounded-md bg-white dark:bg-gray-800 shadow-sm"
         onClick={toggleSidebar}
       >
         {isSidebarOpen ? (
@@ -119,7 +119,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <aside
         className={`fixed lg:relative top-0 left-0 h-screen flex-shrink-0 transform transition-all duration-300 ease-in-out z-40
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          ${isSidebarCollapsed ? 'w-16' : 'w-64'}`}
+          ${isSidebarCollapsed ? 'w-16' : 'w-64'}
+          ${isSidebarOpen ? 'mt-16 lg:mt-0' : ''}`}
       >
         <div className="h-full relative border-r border-[#D5C6C6] dark:border-gray-700 bg-white dark:bg-gray-900">
           <button
