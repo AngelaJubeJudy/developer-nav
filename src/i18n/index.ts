@@ -18,7 +18,14 @@ i18n
       'zh-TW': { translation: zhTW },
       fr: { translation: fr },
     },
+    lng: 'en',
     fallbackLng: 'en',
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng'
+    },
+    supportedLngs: ['en', 'es', 'zh', 'zh-TW', 'fr'],
     interpolation: {
       escapeValue: false,
     },
