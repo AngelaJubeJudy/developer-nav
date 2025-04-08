@@ -25,7 +25,7 @@ const CategoryCard: React.FC<{
       <h3 className="text-xl font-bold mb-3">{t(`categories.${name}`)}</h3>
       <p className="text-center flex-grow text-sm mb-4">{description}</p>
       <div className="text-xs mt-auto">
-        {count} {count === 1 ? t('common.tool') : t('common.tools')}
+        {t('common.toolCount')}: {count}
       </div>
     </div>
   );
@@ -77,7 +77,7 @@ export const CategoriesPage: React.FC = () => {
       {/* 页面标题和描述 */}
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold mb-4 text-[#6B4F4F] dark:text-gray-200">{t('categories.title')}</h1>
-        <p className="text-lg text-[#8B7E7E] dark:text-gray-400">{totalToolsCount} {t('common.tools')} {t('common.byFar')}</p>
+        <p className="text-lg text-[#8B7E7E] dark:text-gray-400">{totalToolsCount} {t('common.tools')} {t('common.now')}</p>
       </div>
 
       {/* 分类卡片 */}

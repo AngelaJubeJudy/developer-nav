@@ -179,5 +179,9 @@
     "newsDescription": "Derniers outils de développement et actualités de l'industrie",
     "toolsDescription": "Outils et ressources pratiques de développement",
     "buildYourToolsDescription": "Créez et développez vos propres outils"
+  },
+  "common": {
+    "toolCount": "Nombre d'Outils",
+    "now": "MAINTENANT"
   }
 } 

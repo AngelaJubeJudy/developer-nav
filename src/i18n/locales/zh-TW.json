@@ -216,5 +216,9 @@
     "newsDescription": "最新開發工具和行業新聞",
     "toolsDescription": "實用開發工具和資源",
     "buildYourToolsDescription": "創建和開發您自己的工具"
+  },
+  "common": {
+    "toolCount": "工具數量",
+    "now": "現在"
   }
 } 

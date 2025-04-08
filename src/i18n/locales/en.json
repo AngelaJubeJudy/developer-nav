@@ -10,7 +10,9 @@
     "shareTitle": "Share Developer Navigation",
     "tool": "tool",
     "tools": "tools",
-    "byFar": "by far"
+    "byFar": "by far",
+    "now": "NOW",
+    "toolCount": "Tool Count"
   },
   "hero": {
     "title": "Developer Tools",

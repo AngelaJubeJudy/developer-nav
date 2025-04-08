@@ -231,5 +231,9 @@
     "newsDescription": "Últimas herramientas de desarrollo y actualizaciones de la industria",
     "toolsDescription": "Herramientas y recursos prácticos de desarrollo",
     "buildYourToolsDescription": "Crea y desarrolla tus propias herramientas"
+  },
+  "common": {
+    "toolCount": "Cantidad de Herramientas",
+    "now": "AHORA"
   }
 } 
