@@ -1,5 +1,13 @@
 {
   "navigation": {
+    "home": "Accueil",
+    "search": "Rechercher",
+    "categories": "Catégories",
+    "submitTool": "Soumettre vos outils",
+    "contact": "Contactez-nous",
+    "sponsor": "Sponsorisez-nous",
+    "resourceDetails": "Détails de la ressource",
+    "category": "Catégorie",
     "newTools": "Nouveaux Outils",
     "mostSearched": "Les Plus Recherchés",
     "hottest": "Les Plus Populaires",
@@ -7,7 +15,14 @@
     "websiteEssentials": "Essentiels pour Sites Web",
     "competitorResearch": "Recherche Concurrentielle",
     "websiteTemplates": "Modèles de Sites Web",
-    "newsAndCommunity": "Actualités et Communauté"
+    "newsAndCommunity": "Actualités et Communauté",
+    "customCampaign": "Campagne Personnalisée",
+    "keywords": "Mots-clés",
+    "templates": "Modèles",
+    "news": "Actualités",
+    "tools": "Outils",
+    "buildYourTools": "Créez vos outils",
+    "all": "Tout"
   },
   "sections": {
     "featuredTools": "Outils en Vedette",

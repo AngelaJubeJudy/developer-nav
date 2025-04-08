@@ -1,9 +1,28 @@
 {
   "navigation": {
     "home": "ホーム",
+    "search": "検索",
+    "categories": "カテゴリー",
+    "submitTool": "ツールを提出",
+    "contact": "お問い合わせ",
+    "sponsor": "スポンサーになる",
+    "resourceDetails": "リソース詳細",
+    "category": "カテゴリー",
+    "newTools": "新着ツール",
+    "mostSearched": "最多検索",
+    "hottest": "人気急上昇",
+    "demandKeywords": "需要とキーワード",
+    "websiteEssentials": "ウェブサイト必需品",
+    "competitorResearch": "競合調査",
+    "websiteTemplates": "ウェブサイトテンプレート",
+    "newsAndCommunity": "ニュースとコミュニティ",
+    "customCampaign": "カスタムキャンペーン",
+    "keywords": "キーワード",
+    "templates": "テンプレート",
+    "news": "ニュース",
     "tools": "ツール",
-    "pricing": "料金",
-    "contact": "お問い合わせ"
+    "buildYourTools": "ツールを作成",
+    "all": "すべて"
   },
   "sections": {
     "hero": {

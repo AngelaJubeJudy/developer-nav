@@ -16,19 +16,19 @@ export const SubmitToolPage: React.FC = () => {
   const cards: Card[] = [
     {
       title: t('navigation.submitTool'),
-      description: t('faq.submitTool.answer'),
+      description: t('submitTool.title'),
       icon: '🚀',
       path: '/submit-tool'
     },
     {
       title: t('navigation.customCampaign'),
-      description: t('faq.customCampaign.answer'),
+      description: t('sponsorUs.cards.customCampaigns.description'),
       icon: '🎯',
       path: '/custom-campaign'
     },
     {
       title: t('navigation.sponsor'),
-      description: t('faq.sponsor.answer'),
+      description: t('sponsorUs.cards.mainSponsor.description'),
       icon: '💎',
       path: '/sponsor-us'
     }
