@@ -181,5 +181,57 @@
     "noResults": "No results found for \"{{query}}\"",
     "popularCategories": "Popular Categories",
     "featuredTools": "Featured Tools"
+  },
+  "submitTool": {
+    "title": "Get Guaranteed Traffic From 4M+ Monthly Fancy Tool Users",
+    "submitButton": "Submit Your Tool",
+    "pricingButton": "Pricing",
+    "pricingTitle": "Choose Your Plan",
+    "recommended": "Recommended",
+    "selectPlan": "Select Plan",
+    "formTitle": "Submit Your Tool",
+    "successTitle": "Thank you for your submission!",
+    "successMessage": "Your tool will be reviewed and added to our directory soon.",
+    "urlLabel": "Tool URL *",
+    "urlHelp": "The URL above will be used to populate your tool page. Edit access is provided upon email verification. All submissions are manually reviewed by our staff. We accept: AI tools, GPTs and AI influencers (non-human).",
+    "nameLabel": "Tool Name *",
+    "descriptionLabel": "Description *",
+    "categoryLabel": "Category *",
+    "tagsLabel": "Tags",
+    "tagsPlaceholder": "Press Enter to add tags",
+    "submitButton": "Pay & Submit Tool",
+    "submitting": "Submitting...",
+    "error": "Failed to submit tool. Please try again.",
+    "plans": {
+      "websiteOnly": {
+        "name": "Website Only",
+        "price": "$99",
+        "features": [
+          "Basic listing on our website",
+          "Standard support",
+          "Monthly analytics"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$299",
+        "features": [
+          "Featured listing on our website",
+          "Priority support",
+          "Advanced analytics",
+          "Social media promotion"
+        ]
+      },
+      "business": {
+        "name": "Business Custom Plan",
+        "price": "Custom",
+        "features": [
+          "Custom placement",
+          "Dedicated support",
+          "Custom analytics",
+          "Full marketing package"
+        ]
+      }
+    }
   }
 } 

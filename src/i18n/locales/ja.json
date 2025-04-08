@@ -1,0 +1,151 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "pricing": "料金",
+    "contact": "お問い合わせ"
+  },
+  "sections": {
+    "hero": {
+      "title": "AIツールディレクトリ",
+      "subtitle": "最高のAIツールを見つける",
+      "searchPlaceholder": "AIツールを検索..."
+    },
+    "featured": {
+      "title": "特集ツール",
+      "viewAll": "すべて表示"
+    },
+    "categories": {
+      "title": "カテゴリー",
+      "viewAll": "すべてのカテゴリー"
+    }
+  },
+  "features": {
+    "title": "なぜ私たちを選ぶのか",
+    "feature1": {
+      "title": "厳選されたツール",
+      "description": "最高品質のAIツールのみを掲載"
+    },
+    "feature2": {
+      "title": "詳細なレビュー",
+      "description": "各ツールの詳細な分析とレビュー"
+    },
+    "feature3": {
+      "title": "最新の更新",
+      "description": "常に最新のAIツールと機能"
+    }
+  },
+  "faq": {
+    "title": "よくある質問",
+    "question1": {
+      "question": "AIツールディレクトリとは何ですか？",
+      "answer": "AIツールディレクトリは、最高のAIツールを見つけるための包括的なプラットフォームです。"
+    },
+    "question2": {
+      "question": "ツールをどのように提出できますか？",
+      "answer": "ツールを提出するには、提出フォームに記入し、必要な情報を提供してください。"
+    }
+  },
+  "pricing": {
+    "title": "料金プラン",
+    "monthly": "月額",
+    "yearly": "年額",
+    "save": "20%節約",
+    "basic": {
+      "name": "基本",
+      "price": "$9",
+      "features": [
+        "基本リスト",
+        "標準サポート",
+        "月次分析"
+      ]
+    },
+    "pro": {
+      "name": "プロ",
+      "price": "$29",
+      "features": [
+        "特集リスト",
+        "優先サポート",
+        "高度な分析"
+      ]
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "price": "カスタム",
+      "features": [
+        "カスタムソリューション",
+        "専任サポート",
+        "カスタム分析"
+      ]
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "name": "名前",
+    "email": "メール",
+    "message": "メッセージ",
+    "send": "送信"
+  },
+  "search": {
+    "placeholder": "AIツールを検索...",
+    "noResults": "結果が見つかりません",
+    "categories": "カテゴリー",
+    "filters": "フィルター",
+    "sortBy": "並び替え",
+    "price": "価格",
+    "rating": "評価",
+    "features": "機能"
+  },
+  "submitTool": {
+    "title": "月間400万人以上のユーザーからトラフィックを獲得",
+    "submitButton": "ツールを提出",
+    "pricingButton": "料金プラン",
+    "pricingTitle": "プランを選択",
+    "recommended": "おすすめ",
+    "selectPlan": "プランを選択",
+    "formTitle": "ツールを提出",
+    "successTitle": "提出ありがとうございます！",
+    "successMessage": "審査後、あなたのツールがディレクトリに追加されます。",
+    "urlLabel": "ツールURL *",
+    "urlHelp": "上記のURLは、ツールページの自動入力に使用されます。編集権限はメール確認後に提供されます。すべての提出は当社のスタッフが手動で審査します。AIツール、GPT、AIインフルエンサー（非人間）を受け付けています。",
+    "nameLabel": "ツール名 *",
+    "descriptionLabel": "説明 *",
+    "categoryLabel": "カテゴリー *",
+    "tagsLabel": "タグ",
+    "tagsPlaceholder": "Enterキーを押してタグを追加",
+    "submitButton": "支払いとツール提出",
+    "submitting": "提出中...",
+    "error": "ツールの提出に失敗しました。もう一度お試しください。",
+    "plans": {
+      "websiteOnly": {
+        "name": "ウェブサイトのみ",
+        "price": "$99",
+        "features": [
+          "ウェブサイトでの基本掲載",
+          "標準サポート",
+          "月次分析"
+        ]
+      },
+      "pro": {
+        "name": "プロフェッショナル",
+        "price": "$299",
+        "features": [
+          "ウェブサイトでの特集掲載",
+          "優先サポート",
+          "高度な分析",
+          "ソーシャルメディアでのプロモーション"
+        ]
+      },
+      "business": {
+        "name": "カスタムビジネスプラン",
+        "price": "カスタム",
+        "features": [
+          "カスタム配置",
+          "専任サポート",
+          "カスタム分析",
+          "包括的なマーケティングプラン"
+        ]
+      }
+    }
+  }
+} 

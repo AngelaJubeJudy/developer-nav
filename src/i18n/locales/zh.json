@@ -160,5 +160,57 @@
   },
   "features": {
     "buildYourTools": "构建工具"
+  },
+  "submitTool": {
+    "title": "获取来自400万+月度用户的流量",
+    "submitButton": "提交您的工具",
+    "pricingButton": "价格方案",
+    "pricingTitle": "选择您的方案",
+    "recommended": "推荐",
+    "selectPlan": "选择方案",
+    "formTitle": "提交您的工具",
+    "successTitle": "感谢您的提交！",
+    "successMessage": "您的工具将在审核后添加到我们的目录中。",
+    "urlLabel": "工具网址 *",
+    "urlHelp": "上述URL将用于填充您的工具页面。编辑权限在邮件验证后提供。所有提交都由我们的工作人员手动审核。我们接受：AI工具、GPTs和AI影响者（非人类）。",
+    "nameLabel": "工具名称 *",
+    "descriptionLabel": "描述 *",
+    "categoryLabel": "分类 *",
+    "tagsLabel": "标签",
+    "tagsPlaceholder": "按回车添加标签",
+    "submitButton": "支付并提交工具",
+    "submitting": "提交中...",
+    "error": "提交工具失败，请重试。",
+    "plans": {
+      "websiteOnly": {
+        "name": "仅网站",
+        "price": "$99",
+        "features": [
+          "在我们的网站上基本 listing",
+          "标准支持",
+          "月度分析"
+        ]
+      },
+      "pro": {
+        "name": "专业版",
+        "price": "$299",
+        "features": [
+          "在我们的网站上特色 listing",
+          "优先支持",
+          "高级分析",
+          "社交媒体推广"
+        ]
+      },
+      "business": {
+        "name": "企业定制方案",
+        "price": "定制",
+        "features": [
+          "定制位置",
+          "专属支持",
+          "定制分析",
+          "完整营销方案"
+        ]
+      }
+    }
   }
 } 

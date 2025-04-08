@@ -113,5 +113,57 @@
     "noResults": "未找到與\"{{query}}\"相關的結果",
     "popularCategories": "熱門分類",
     "featuredTools": "精選工具"
+  },
+  "submitTool": {
+    "title": "獲取來自400萬+月度用戶的流量",
+    "submitButton": "提交您的工具",
+    "pricingButton": "價格方案",
+    "pricingTitle": "選擇您的方案",
+    "recommended": "推薦",
+    "selectPlan": "選擇方案",
+    "formTitle": "提交您的工具",
+    "successTitle": "感謝您的提交！",
+    "successMessage": "您的工具將在審核後添加到我們的目錄中。",
+    "urlLabel": "工具網址 *",
+    "urlHelp": "上述URL將用於填充您的工具頁面。編輯權限在郵件驗證後提供。所有提交都由我們的工作人員手動審核。我們接受：AI工具、GPTs和AI影響者（非人類）。",
+    "nameLabel": "工具名稱 *",
+    "descriptionLabel": "描述 *",
+    "categoryLabel": "分類 *",
+    "tagsLabel": "標籤",
+    "tagsPlaceholder": "按回車添加標籤",
+    "submitButton": "支付並提交工具",
+    "submitting": "提交中...",
+    "error": "提交工具失敗，請重試。",
+    "plans": {
+      "websiteOnly": {
+        "name": "僅網站",
+        "price": "$99",
+        "features": [
+          "在我們的網站上基本 listing",
+          "標準支持",
+          "月度分析"
+        ]
+      },
+      "pro": {
+        "name": "專業版",
+        "price": "$299",
+        "features": [
+          "在我們的網站上特色 listing",
+          "優先支持",
+          "高級分析",
+          "社交媒體推廣"
+        ]
+      },
+      "business": {
+        "name": "企業定制方案",
+        "price": "定制",
+        "features": [
+          "定制位置",
+          "專屬支持",
+          "定制分析",
+          "完整營銷方案"
+        ]
+      }
+    }
   }
 } 

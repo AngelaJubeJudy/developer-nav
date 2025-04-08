@@ -9,30 +9,30 @@ interface Card {
   path: string;
 }
 
-const cards: Card[] = [
-  {
-    title: 'navigation.submitTool',
-    description: 'faq.submitTool.answer',
-    icon: '🚀',
-    path: '/submit-tool'
-  },
-  {
-    title: 'navigation.customCampaign',
-    description: 'faq.customCampaign.answer',
-    icon: '🎯',
-    path: '/custom-campaign'
-  },
-  {
-    title: 'navigation.sponsor',
-    description: 'faq.sponsor.answer',
-    icon: '💎',
-    path: '/sponsor-us'
-  }
-];
-
 export const SubmitToolPage: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const cards: Card[] = [
+    {
+      title: t('navigation.submitTool'),
+      description: t('faq.submitTool.answer'),
+      icon: '🚀',
+      path: '/submit-tool'
+    },
+    {
+      title: t('navigation.customCampaign'),
+      description: t('faq.customCampaign.answer'),
+      icon: '🎯',
+      path: '/custom-campaign'
+    },
+    {
+      title: t('navigation.sponsor'),
+      description: t('faq.sponsor.answer'),
+      icon: '💎',
+      path: '/sponsor-us'
+    }
+  ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
@@ -49,10 +49,10 @@ export const SubmitToolPage: React.FC = () => {
           >
             <div className="text-4xl mb-4">{card.icon}</div>
             <h2 className="text-2xl font-bold text-[#6B4F4F] dark:text-gray-200 mb-2">
-              {t(card.title)}
+              {card.title}
             </h2>
             <p className="text-[#8B7E7E] dark:text-gray-400">
-              {t(card.description)}
+              {card.description}
             </p>
           </div>
         ))}

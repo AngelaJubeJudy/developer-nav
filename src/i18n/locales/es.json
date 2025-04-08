@@ -113,5 +113,57 @@
     "noResults": "No se encontraron resultados para \"{{query}}\"",
     "popularCategories": "Categorías Populares",
     "featuredTools": "Herramientas Destacadas"
+  },
+  "submitTool": {
+    "title": "Obtén tráfico de más de 4 millones de usuarios mensuales",
+    "submitButton": "Enviar tu herramienta",
+    "pricingButton": "Planes de precios",
+    "pricingTitle": "Elige tu plan",
+    "recommended": "Recomendado",
+    "selectPlan": "Seleccionar plan",
+    "formTitle": "Enviar tu herramienta",
+    "successTitle": "¡Gracias por tu envío!",
+    "successMessage": "Tu herramienta será añadida a nuestro directorio después de la revisión.",
+    "urlLabel": "URL de la herramienta *",
+    "urlHelp": "La URL anterior se utilizará para rellenar la página de tu herramienta. Los permisos de edición se proporcionan después de la verificación por correo electrónico. Todos los envíos son revisados manualmente por nuestro personal. Aceptamos: herramientas de IA, GPTs e influencers de IA (no humanos).",
+    "nameLabel": "Nombre de la herramienta *",
+    "descriptionLabel": "Descripción *",
+    "categoryLabel": "Categoría *",
+    "tagsLabel": "Etiquetas",
+    "tagsPlaceholder": "Presiona Enter para añadir etiquetas",
+    "submitButton": "Pagar y enviar herramienta",
+    "submitting": "Enviando...",
+    "error": "Error al enviar la herramienta, por favor inténtalo de nuevo.",
+    "plans": {
+      "websiteOnly": {
+        "name": "Solo sitio web",
+        "price": "$99",
+        "features": [
+          "Listado básico en nuestro sitio web",
+          "Soporte estándar",
+          "Análisis mensual"
+        ]
+      },
+      "pro": {
+        "name": "Profesional",
+        "price": "$299",
+        "features": [
+          "Listado destacado en nuestro sitio web",
+          "Soporte prioritario",
+          "Análisis avanzado",
+          "Promoción en redes sociales"
+        ]
+      },
+      "business": {
+        "name": "Plan empresarial personalizado",
+        "price": "Personalizado",
+        "features": [
+          "Ubicación personalizada",
+          "Soporte dedicado",
+          "Análisis personalizado",
+          "Plan de marketing completo"
+        ]
+      }
+    }
   }
 } 
