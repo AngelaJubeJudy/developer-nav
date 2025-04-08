@@ -57,12 +57,12 @@ export const CategoriesPage: React.FC = () => {
 
   // 分类卡片数据
   const categoryCards = [
-    { name: 'all', description: t('categories.all'), count: totalToolsCount },
-    { name: 'keywords', description: t('categories.keywords'), count: bookmarks['keywords']?.length || 0 },
-    { name: 'templates', description: t('categories.templates'), count: bookmarks['templates']?.length || 0 },
-    { name: 'news', description: t('categories.news'), count: bookmarks['news']?.length || 0 },
-    { name: 'tools', description: t('categories.tools'), count: bookmarks['tools']?.length || 0 },
-    { name: 'buildYourTools', description: t('categories.buildYourTools'), count: bookmarks['buildYourTools']?.length || 0 },
+    { name: 'all', description: t('categories.description', { count: totalToolsCount }), count: totalToolsCount },
+    { name: 'keywords', description: t('categories.keywordsDescription'), count: bookmarks['keywords']?.length || 0 },
+    { name: 'templates', description: t('categories.templatesDescription'), count: bookmarks['templates']?.length || 0 },
+    { name: 'news', description: t('categories.newsDescription'), count: bookmarks['news']?.length || 0 },
+    { name: 'tools', description: t('categories.toolsDescription'), count: bookmarks['tools']?.length || 0 },
+    { name: 'buildYourTools', description: t('categories.buildYourToolsDescription'), count: bookmarks['buildYourTools']?.length || 0 },
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   // 页面加载时滚动到当前分类

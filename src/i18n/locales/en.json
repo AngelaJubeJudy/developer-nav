@@ -66,14 +66,19 @@
     "hottest": "Hottest"
   },
   "categories": {
-    "title": "Tools by Categories",
-    "description": "Browse our collection of {{count}} tools by category",
+    "title": "Category Tools",
+    "description": "Browse {{count}} tools",
     "all": "All Tools",
     "keywords": "Keywords",
     "templates": "Templates",
     "news": "News",
     "tools": "Tools",
-    "buildYourTools": "Build Your Tools"
+    "buildYourTools": "Build Tools",
+    "keywordsDescription": "Discover and explore trending keywords",
+    "templatesDescription": "Curated website templates and design resources",
+    "newsDescription": "Latest development tools and industry news",
+    "toolsDescription": "Practical development tools and resources",
+    "buildYourToolsDescription": "Create and develop your own tools"
   },
   "features": {
     "title": "Why Choose Our Platform",

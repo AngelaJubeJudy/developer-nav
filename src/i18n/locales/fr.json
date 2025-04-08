@@ -164,5 +164,20 @@
         "clicks": "~500,000 clics/mois"
       }
     }
+  },
+  "categories": {
+    "title": "Outils par Catégories",
+    "description": "Parcourez notre collection de {{count}} outils",
+    "all": "Tous les Outils",
+    "keywords": "Mots-clés",
+    "templates": "Modèles",
+    "news": "Actualités",
+    "tools": "Outils",
+    "buildYourTools": "Créez vos Outils",
+    "keywordsDescription": "Découvrez et explorez les mots-clés tendance",
+    "templatesDescription": "Modèles de sites web et ressources de design sélectionnés",
+    "newsDescription": "Derniers outils de développement et actualités de l'industrie",
+    "toolsDescription": "Outils et ressources pratiques de développement",
+    "buildYourToolsDescription": "Créez et développez vos propres outils"
   }
 } 

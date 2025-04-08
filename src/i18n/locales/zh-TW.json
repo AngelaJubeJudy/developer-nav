@@ -201,5 +201,20 @@
         "clicks": "約500,000次點擊/月"
       }
     }
+  },
+  "categories": {
+    "title": "分類工具",
+    "description": "瀏覽我們的{{count}}個工具",
+    "all": "所有工具",
+    "keywords": "關鍵字",
+    "templates": "模板",
+    "news": "新聞",
+    "tools": "工具",
+    "buildYourTools": "建立工具",
+    "keywordsDescription": "發現和探索熱門關鍵字",
+    "templatesDescription": "精選網站模板和設計資源",
+    "newsDescription": "最新開發工具和行業新聞",
+    "toolsDescription": "實用開發工具和資源",
+    "buildYourToolsDescription": "創建和開發您自己的工具"
   }
 } 

@@ -216,5 +216,20 @@
         "clicks": "~500,000 clics/mes"
       }
     }
+  },
+  "categories": {
+    "title": "Herramientas por Categorías",
+    "description": "Explora nuestra colección de {{count}} herramientas",
+    "all": "Todas las Herramientas",
+    "keywords": "Palabras Clave",
+    "templates": "Plantillas",
+    "news": "Noticias",
+    "tools": "Herramientas",
+    "buildYourTools": "Crea tus Herramientas",
+    "keywordsDescription": "Descubre y explora palabras clave tendencia",
+    "templatesDescription": "Plantillas de sitios web y recursos de diseño seleccionados",
+    "newsDescription": "Últimas herramientas de desarrollo y actualizaciones de la industria",
+    "toolsDescription": "Herramientas y recursos prácticos de desarrollo",
+    "buildYourToolsDescription": "Crea y desarrolla tus propias herramientas"
   }
 } 

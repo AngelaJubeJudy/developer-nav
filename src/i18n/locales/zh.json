@@ -70,14 +70,19 @@
     "featuredTools": "精选工具"
   },
   "categories": {
-    "title": "按分类浏览工具",
-    "description": "浏览我们收集的 {{count}} 个工具",
+    "title": "分类工具",
+    "description": "浏览 {{count}} 个工具",
     "all": "所有工具",
     "keywords": "关键词",
     "templates": "模板",
     "news": "新闻",
     "tools": "工具",
-    "buildYourTools": "构建工具"
+    "buildYourTools": "构建工具",
+    "keywordsDescription": "发现和探索趋势关键词",
+    "templatesDescription": "精选网站模板和设计资源",
+    "newsDescription": "最新开发工具和行业新闻",
+    "toolsDescription": "实用开发工具和资源",
+    "buildYourToolsDescription": "创建和开发自己的工具"
   },
   "faq": {
     "title": "常见问题",
