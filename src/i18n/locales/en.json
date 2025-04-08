@@ -29,7 +29,13 @@
     "terms": "Terms of Service",
     "contactUs": "Contact Us",
     "copyright": "Developer Tools. All rights reserved.",
-    "createdBy": "Created by Angela in NYC"
+    "createdBy": "Created by Angela in NYC",
+    "social": "Social Media",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to our newsletter for updates",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "rights": "All rights reserved"
   },
   "navigation": {
     "home": "Home",
@@ -187,7 +193,8 @@
     "searchResults": "Search Results",
     "noResults": "No results found for \"{{query}}\"",
     "popularCategories": "Popular Categories",
-    "featuredTools": "Featured Tools"
+    "featuredTools": "Featured Tools",
+    "beYourOwnSolopreneur": "Be Your Own Solopreneur."
   },
   "submitTool": {
     "title": "Get Guaranteed Traffic From 4M+ Monthly Fancy Tool Users",

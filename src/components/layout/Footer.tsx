@@ -1,112 +1,83 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-white dark:bg-gray-800 rounded-lg shadow-sm mt-16">
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <footer className="bg-gray-800 text-white">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="text-xl font-semibold text-[#6B4F4F] dark:text-gray-200 mb-4">
-              {t('footer.title')}
-            </h3>
-            <p className="text-[#8B7E7E] dark:text-gray-400 mb-4">
-              {t('footer.description')}
-            </p>
+          {/* Social Media Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">{t('footer.social')}</h3>
             <div className="flex space-x-4">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#6B4F4F] dark:text-gray-200 hover:text-[#5A3F3F] dark:hover:text-gray-300"
-              >
-                <Github size={20} />
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                <FaGithub size={24} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#6B4F4F] dark:text-gray-200 hover:text-[#5A3F3F] dark:hover:text-gray-300"
-              >
-                <Twitter size={20} />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                <FaTwitter size={24} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#6B4F4F] dark:text-gray-200 hover:text-[#5A3F3F] dark:hover:text-gray-300"
-              >
-                <Linkedin size={20} />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                <FaLinkedin size={24} />
               </a>
             </div>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-[#6B4F4F] dark:text-gray-200 mb-4">
-              {t('footer.quickLinks')}
-            </h4>
+            <h3 className="text-xl font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="/about" 
-                  className="text-[#8B7E7E] dark:text-gray-400 hover:text-[#6B4F4F] dark:hover:text-gray-200"
-                >
-                  {t('footer.about')}
-                </a>
+                <Link to="/about" className="hover:text-gray-300">{t('footer.about')}</Link>
               </li>
               <li>
-                <a 
-                  href="/contact" 
-                  className="text-[#8B7E7E] dark:text-gray-400 hover:text-[#6B4F4F] dark:hover:text-gray-200"
-                >
-                  {t('footer.contact')}
-                </a>
+                <Link to="/contact" className="hover:text-gray-300">{t('footer.contact')}</Link>
               </li>
               <li>
-                <a 
-                  href="/privacy" 
-                  className="text-[#8B7E7E] dark:text-gray-400 hover:text-[#6B4F4F] dark:hover:text-gray-200"
-                >
-                  {t('footer.privacy')}
-                </a>
+                <Link to="/privacy" className="hover:text-gray-300">{t('footer.privacy')}</Link>
               </li>
               <li>
-                <a 
-                  href="/terms" 
-                  className="text-[#8B7E7E] dark:text-gray-400 hover:text-[#6B4F4F] dark:hover:text-gray-200"
-                >
-                  {t('footer.terms')}
-                </a>
+                <Link to="/terms" className="hover:text-gray-300">{t('footer.terms')}</Link>
               </li>
             </ul>
           </div>
-          
+
+          {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-[#6B4F4F] dark:text-gray-200 mb-4">
-              {t('footer.contactUs')}
-            </h4>
-            <div className="flex items-center space-x-2 text-[#8B7E7E] dark:text-gray-400">
-              <Mail size={20} />
-              <a 
-                href="mailto:angelajubejudy@126.com"
-                className="hover:text-[#6B4F4F] dark:hover:text-gray-200"
+            <h3 className="text-xl font-bold mb-4">{t('footer.contact')}</h3>
+            <ul className="space-y-2">
+              <li>Email: contact@example.com</li>
+              <li>Phone: +1 234 567 890</li>
+              <li>Address: 123 Developer Street</li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">{t('footer.newsletter')}</h3>
+            <p className="mb-4">{t('footer.newsletterDesc')}</p>
+            <form className="flex">
+              <input
+                type="email"
+                placeholder={t('footer.emailPlaceholder')}
+                className="px-4 py-2 rounded-l text-gray-800 w-full"
+              />
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r"
               >
-                angelajubejudy@126.com
-              </a>
-            </div>
+                {t('footer.subscribe')}
+              </button>
+            </form>
           </div>
         </div>
-        
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 text-center">
-          <p className="text-[#8B7E7E] dark:text-gray-400">
-            © {new Date().getFullYear()} Developer Nav. All rights reserved.
-          </p>
-          <p className="text-sm text-[#8B7E7E] dark:text-gray-400 mt-2">
-            Created with ❤️ by Angela in NYC
-          </p>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>&copy; {new Date().getFullYear()} Developer Nav. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

@@ -21,7 +21,7 @@
   },
   "footer": {
     "title": "开发者工具",
-    "description": "快速发现最新的开发者产品 - 永远不会丢失您喜爱的工具",
+    "description": "快速发现最新的开发者工具 - 永远不会错过你喜欢的工具。",
     "quickLinks": "快速链接",
     "about": "关于我们",
     "contact": "联系我们",
@@ -29,7 +29,13 @@
     "terms": "服务条款",
     "contactUs": "联系我们",
     "copyright": "开发者工具。保留所有权利。",
-    "createdBy": "由 Angela 在纽约创建"
+    "createdBy": "由 Angela 在纽约创建",
+    "social": "社交媒体",
+    "newsletter": "订阅通讯",
+    "newsletterDesc": "订阅我们的通讯以获取最新更新",
+    "emailPlaceholder": "输入您的邮箱",
+    "subscribe": "订阅",
+    "rights": "保留所有权利"
   },
   "navigation": {
     "home": "首页",
@@ -69,7 +75,8 @@
     "searchResults": "搜索结果",
     "noResults": "未找到与\"{{query}}\"相关的结果",
     "popularCategories": "热门分类",
-    "featuredTools": "精选工具"
+    "featuredTools": "精选工具",
+    "beYourOwnSolopreneur": "成为自己的独立创业者。"
   },
   "categories": {
     "title": "分类工具",
