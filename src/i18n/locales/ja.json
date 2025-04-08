@@ -147,5 +147,41 @@
         ]
       }
     }
+  },
+  "sponsorUs": {
+    "title": "スポンサーシップオプション",
+    "bookNow": "今すぐ予約",
+    "cards": {
+      "customCampaigns": {
+        "title": "カスタムキャンペーン",
+        "description": "ニーズに合わせたカスタムマーケティングキャンペーンを作成",
+        "clicks": "約100,000クリック/月"
+      },
+      "mainSponsor": {
+        "title": "メインスポンサー - ニュースレター",
+        "description": "50,000+購読者向けの週間ニュースレターで特集",
+        "clicks": "約50,000クリック/月"
+      },
+      "featuredTools": {
+        "title": "特集ツールの第1位",
+        "description": "特集ツールセクションのトップスポットを獲得",
+        "clicks": "約200,000クリック/月"
+      },
+      "comingInHot": {
+        "title": "Coming in Hot広告",
+        "description": "週間「Coming in Hot」セクションでツールをプロモーション",
+        "clicks": "約75,000クリック/月"
+      },
+      "classifiedAd": {
+        "title": "クラシファイド広告",
+        "description": "ディレクトリにクラシファイド広告を掲載",
+        "clicks": "約25,000クリック/月"
+      },
+      "deepSponsorship": {
+        "title": "ディープスポンサーシップ",
+        "description": "最大限の露出を実現する包括的なスポンサーシップパッケージ",
+        "clicks": "約500,000クリック/月"
+      }
+    }
   }
 } 

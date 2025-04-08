@@ -165,5 +165,41 @@
         ]
       }
     }
+  },
+  "sponsorUs": {
+    "title": "贊助選項",
+    "bookNow": "立即預訂",
+    "cards": {
+      "customCampaigns": {
+        "title": "定制營銷活動",
+        "description": "創建量身定制的營銷活動",
+        "clicks": "約100,000次點擊/月"
+      },
+      "mainSponsor": {
+        "title": "主要贊助商 - 通訊",
+        "description": "在我們的每週通訊中向50,000+訂閱者展示",
+        "clicks": "約50,000次點擊/月"
+      },
+      "featuredTools": {
+        "title": "精選工具第一名",
+        "description": "在我們的精選工具部分獲得第一名位置",
+        "clicks": "約200,000次點擊/月"
+      },
+      "comingInHot": {
+        "title": "熱門推薦廣告",
+        "description": "在我們的每週\"熱門推薦\"部分推廣您的工具",
+        "clicks": "約75,000次點擊/月"
+      },
+      "classifiedAd": {
+        "title": "分類廣告",
+        "description": "在我們的目錄中放置分類廣告",
+        "clicks": "約25,000次點擊/月"
+      },
+      "deepSponsorship": {
+        "title": "深度贊助",
+        "description": "全面的贊助套餐，最大程度曝光",
+        "clicks": "約500,000次點擊/月"
+      }
+    }
   }
 } 

@@ -165,5 +165,41 @@
         ]
       }
     }
+  },
+  "sponsorUs": {
+    "title": "Opciones de Patrocinio",
+    "bookNow": "Reservar Ahora",
+    "cards": {
+      "customCampaigns": {
+        "title": "Campañas Personalizadas",
+        "description": "Crea una campaña de marketing personalizada",
+        "clicks": "~100,000 clics/mes"
+      },
+      "mainSponsor": {
+        "title": "Patrocinador Principal - Boletín",
+        "description": "Destácate en nuestro boletín semanal a más de 50,000 suscriptores",
+        "clicks": "~50,000 clics/mes"
+      },
+      "featuredTools": {
+        "title": "#1 en Herramientas Destacadas",
+        "description": "Obtén el primer lugar en nuestra sección de herramientas destacadas",
+        "clicks": "~200,000 clics/mes"
+      },
+      "comingInHot": {
+        "title": "Anuncio en Coming in Hot",
+        "description": "Promociona tu herramienta en nuestra sección semanal 'Coming in Hot'",
+        "clicks": "~75,000 clics/mes"
+      },
+      "classifiedAd": {
+        "title": "Anuncio Clasificado",
+        "description": "Coloca un anuncio clasificado en nuestro directorio",
+        "clicks": "~25,000 clics/mes"
+      },
+      "deepSponsorship": {
+        "title": "Patrocinio Profundo",
+        "description": "Paquete de patrocinio completo con máxima exposición",
+        "clicks": "~500,000 clics/mes"
+      }
+    }
   }
 } 
