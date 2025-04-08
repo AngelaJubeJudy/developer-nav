@@ -102,10 +102,10 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 text-center">
           <p className="text-[#8B7E7E] dark:text-gray-400">
-            © {new Date().getFullYear()} {t('footer.copyright')}
+            © {new Date().getFullYear()} Developer Nav. All rights reserved.
           </p>
           <p className="text-sm text-[#8B7E7E] dark:text-gray-400 mt-2">
-            {t('footer.createdBy')}
+            Created with ❤️ by Angela in NYC
           </p>
         </div>
       </div>
